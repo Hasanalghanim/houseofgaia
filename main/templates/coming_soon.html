@@ -1,16 +1,16 @@
-{% extends "base.html" %} {%load static%}{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container">
 	<div class="left">
 		<h4>Coming Soon</h4>
 		<p>We're currently working on something fantastic.</p>
 
 		<div class="icons">
+			{%load static%}
 			<div><img src={% static 'icons/facebook.png' %} alt="baseWallpaper" /></div>
 			<div><img src={% static 'icons/instagram.png' %} alt="baseWallpaper" /></div>
 			<div><img src={% static 'icons/tiktok.png' %} alt="baseWallpaper" /></div>
 		</div>
 	</div>
-
-	<img src={% static 'icons/baseWallpaper.jpg' %} alt="baseWallpaper" class='right'/>
+	{%load static%} <img src={% static 'icons/baseWallpaper.jpg' %} alt="baseWallpaper" class='right'/>
 </div>
 {% endblock %}
