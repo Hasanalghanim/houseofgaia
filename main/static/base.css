@@ -64,7 +64,7 @@ body {
 	}
 	.right {
 		height: 75vh;
-		height: 100vw;
+		width: 100vw;
 	}
 	.left h4 {
 		font-size: 32px;
