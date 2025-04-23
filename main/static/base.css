@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html,
 body {
 	margin: 0;
@@ -31,8 +37,17 @@ body {
 	font-weight: 500;
 	font-family: 'Raleway', sans-serif;
 	font-optical-sizing: auto;
+	margin: 0;
 }
 .left p {
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Raleway', sans-serif;
+	font-optical-sizing: auto;
+	margin: 0;
+}
+
+.left span {
 	font-size: 18px;
 	font-weight: 500;
 	font-family: 'Raleway', sans-serif;
@@ -94,7 +109,14 @@ body {
 		font-optical-sizing: auto;
 	}
 	.left p {
-		font-size: 10px;
+		font-size: 18px;
+		font-weight: 500;
+		font-family: 'Raleway', sans-serif;
+		font-optical-sizing: auto;
+	}
+
+	.left span {
+		font-size: 18px;
 		font-weight: 500;
 		font-family: 'Raleway', sans-serif;
 		font-optical-sizing: auto;

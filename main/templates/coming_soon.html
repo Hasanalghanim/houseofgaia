@@ -11,6 +11,12 @@
 	<div class="left">
 		<h4>Coming Soon</h4>
 		<p>We're currently working on something fantastic.</p>
+		<div id="countdown">
+			<span id="days"></span> days 
+			<span id="hours"></span> hours 
+			<span id="minutes"></span> minutes 
+			<span id="seconds"></span> seconds
+		</div>
 
 		<div class="icons">
 			<div><img src="{% static 'icons/facebook.png' %}" alt="Facebook Icon" /></div>
@@ -24,4 +30,37 @@
 		<img src="{% static 'icons/baseWallpaper.jpeg' %}" alt="Base Wallpaper"  />
 	<div>
 </div>
+
+
+
+<script>
+    
+    const targetDate = new Date("July 1, 2025 00:00:00").getTime();
+
+    
+    const interval = setInterval(function() {
+
+        
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+    
+        if (distance < 0) {
+            clearInterval(interval);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
 {% endblock %}
