@@ -40,18 +40,25 @@ body {
 	margin: 0;
 }
 .left p {
-	font-size: 18px;
 	font-weight: 500;
 	font-family: 'Raleway', sans-serif;
 	font-optical-sizing: auto;
+	font-size: clamp(18px, 5vw, 24px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	margin: 0;
 }
 
 .left span {
-	font-size: 18px;
 	font-weight: 500;
 	font-family: 'Raleway', sans-serif;
 	font-optical-sizing: auto;
+	font-size: clamp(18px, 5vw, 24px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
 }
 .icons {
 	display: flex;
@@ -107,19 +114,28 @@ body {
 		font-weight: 500;
 		font-family: 'Raleway', sans-serif;
 		font-optical-sizing: auto;
+		margin: 0;
 	}
 	.left p {
-		font-size: 18px;
 		font-weight: 500;
 		font-family: 'Raleway', sans-serif;
 		font-optical-sizing: auto;
+		font-size: clamp(12px, 5vw, 16px);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 0;
 	}
 
 	.left span {
-		font-size: 18px;
 		font-weight: 500;
 		font-family: 'Raleway', sans-serif;
 		font-optical-sizing: auto;
+		font-size: clamp(12px, 5vw, 16px);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 0;
 	}
 	.icons img {
 		height: 17.92px;
