@@ -2,6 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		{% block meta %}
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>{% block title %}House of Gaia{% endblock %}</title>
+		<meta
+			name="description"
+			content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piecings.{% endblock %}"
+		/>
+		<meta name="keywords" content="House of Gaia, eco fashion, natural beauty, sustainable living" />
+		<meta name="author" content="House of Gaia" />
+
+		<!-- Open Graph for social sharing -->
+		<meta property="og:title" content="House of Gaia" />
+		<meta property="og:description" content="Eco fashion and wellness reimagined." />
+		<meta property="og:image" content="{% static 'icons/baseWallpaper.jpg' %}" />
+		<meta property="og:url" content="https://houseofgaia.ca" />
+		<meta name="twitter:card" content="summary_large_image" />
+		{% endblock %}
+
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,7 +39,6 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>House Of Gaia</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 	</head>
 	<body>
