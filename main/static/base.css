@@ -50,16 +50,6 @@ body {
 	margin: 0;
 }
 
-.left span {
-	font-weight: 500;
-	font-family: 'Raleway', sans-serif;
-	font-optical-sizing: auto;
-	font-size: clamp(18px, 5vw, 24px);
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	margin: 0;
-}
 .icons {
 	display: flex;
 	width: 25%;
@@ -127,16 +117,6 @@ body {
 		margin: 0;
 	}
 
-	.left span {
-		font-weight: 500;
-		font-family: 'Raleway', sans-serif;
-		font-optical-sizing: auto;
-		font-size: clamp(12px, 5vw, 16px);
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		margin: 0;
-	}
 	.icons img {
 		height: 17.92px;
 		width: 17.92px;
