@@ -58,9 +58,12 @@ body {
 		display: flex;
 		justify-content: center;
 		flex-direction: column-reverse;
-		/* Full screen height */
+		height: 100vh; /* Full screen height */
 		min-width: 100%;
 		padding: 0;
+	}
+	.left {
+		min-height: 50%;
 	}
 	.right {
 		height: 75vh;
