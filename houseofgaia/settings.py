@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5^_zrlc+d%3)#8lnb_f)kduzl(ka&n^8(v@%6!73^e9n!!ymku
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['houseofgaia.pythonanywhere.com','houseofgaia.ca','www.houseofgaia.ca','127.0.0.1']
+ALLOWED_HOSTS = ['houseofgaia.ca','www.houseofgaia.ca','127.0.0.1']
 
 
 # Application definition
