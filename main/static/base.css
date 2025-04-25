@@ -13,6 +13,8 @@ body {
 	height: 100%;
 	font-family: 'Raleway', sans-serif !important;
 	font-weight: 500 !important;
+	background: #faf3eb; 
+
 }
 
 .container {
@@ -85,6 +87,79 @@ body {
 	background-color: rgba(0, 0, 0, 0.0); /* black with 50% opacity */
 	z-index: 1;
 	pointer-events: none;
+}
+    /* Paper style input container */
+.input-wrapper {
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	padding: .5rem 1rem;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect to mimic paper */
+.input-wrapper:hover {
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Paper style input field */
+.input-wrapper input {
+		border: none;
+		box-shadow: none;
+		padding: 10px;
+		font-size: 16px;
+		width: 100%;
+		border-radius: 4px;
+}
+
+.input-wrapper input:focus {
+		outline: none;
+}
+
+/* Submit button styling */
+.input-wrapper button {
+		background-color: #fff; /* White background */
+		color: black; /* Text and arrow color */
+		border: 0px solid #ddd; /* Light gray border for the button */
+		border-left: 2px solid #ddd; /* Border on the left of the button */
+		
+		padding: 10px 15px;
+		margin-left: 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+.input-wrapper button:hover {
+		background-color: #faf3eb; /* Slightly darker background on hover */
+}
+
+.input-wrapper button i {
+		font-size: 18px;
+		margin-left: 5px;
+}
+
+/* Right arrow icon */
+.input-wrapper button i:before {
+		content: '\2192'; /* Unicode for right arrow */
+}
+
+/* Label */
+.input-wrapper label {
+		position: absolute;
+		top: -18px;
+		left: 10px;
+		font-size: 14px;
+		color: #9e9e9e;
+}
+
+.thankYouMsg {
+	display: none;
+}
+.thankYouMsg.visible {
+	display: block; /* Will make it visible when the 'visible' class is added */
 }
 
 @media (max-width: 991px) {

@@ -11,7 +11,26 @@
 	<div class="left">
 		<h4>Coming Soon</h4>
 		<p>We're currently working on something fantastic.</p>
-		<div class="ml-embedded" data-form="UH9fj9"></div>
+		{% comment %} <div class="ml-embedded" data-form="UH9fj9"></div> {% endcomment %}
+		<form action="https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe" method="post" target="_blank" id="newsletter-form">
+			<div class="input-wrapper">
+				<input 
+				type="email" 
+				name="fields[email]" 
+				placeholder="Email" 
+				autocomplete="email" 
+				pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+				title="Please enter a valid email address with an '@' and domain, like 'example@domain.com'."
+				required
+				>
+				<button type="submit">
+				<i></i>
+			</button>
+			</div>
+		</form>
+
+		<div id='thankYouMsg' class='thankYouMsg' ><p>Thank you for subscribing!</p> </div>
+
 		
 
 		<div class="icons">
@@ -28,6 +47,47 @@
 </div>
 
 
+
+<script>
+	jQuery(document).ready(function () {
+		jQuery('#newsletter-form').on('submit', function (e) {
+			e.preventDefault();
+	
+			// Get the email input value
+			var email = jQuery('input[name="fields[email]"]').val();
+	
+			// Email validation regex pattern
+			var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	
+			// Validate email format
+			if (!emailPattern.test(email)) {
+				M.toast({html: 'Please enter a valid email address.'})
+				return; // Prevent form submission if email is invalid
+			}
+	
+			// If valid email, proceed with the AJAX request
+			jQuery.ajax({
+				url: 'https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe',
+				dataType: 'jsonp',
+				data: {
+					'fields[email]': email
+				},
+				success: function (response) {
+					if (response.success) {
+						document.getElementById("newsletter-form").style.display = "none";
+						document.getElementById("thankYouMsg").style.display = "block";
+						M.toast({html: 'Thank you for subscribing. '})
+						
+						jQuery('#newsletter-form')[0].reset();
+					} else {
+						console.log('Error response:', response);
+						M.toast({html: 'Something went wrong. '})
+					}
+				}
+			});
+		});
+	});
+</script>
 
 
 
