@@ -122,7 +122,7 @@ body {
 		background-color: #fff; /* White background */
 		color: black; /* Text and arrow color */
 		border: 0px solid #ddd; /* Light gray border for the button */
-		border-left: 2px solid #ddd; /* Border on the left of the button */
+		
 		
 		padding: 10px 15px;
 		margin-left: 10px;
