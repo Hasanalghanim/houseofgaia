@@ -9,26 +9,38 @@
 {% block content %}
 <div class="container">
 	<div class="left">
-		<h4>Coming Soon</h4>
+		<h4>Coming Soon!</h4>
 		<p>We're currently working on something fantastic.</p>
-		{% comment %} <div class="ml-embedded" data-form="UH9fj9"></div> {% endcomment %}
-		<form action="https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe" method="post" target="_blank" id="newsletter-form">
-			<div class="input-wrapper">
-				<input 
-				type="email" 
-				name="fields[email]" 
-				placeholder="Email" 
-				autocomplete="email" 
-				pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-				title="Please enter a valid email address with an '@' and domain, like 'example@domain.com'."
-				required
-				>
-				<button type="submit"  data-sitekey="6LfoACUrAAAAAOINr3y7-atel-1U1au1EV6ptprC" >
-				<i></i>
+		<form action="#" method="post" target="_blank" id="newsletter-form">
+				<div class="input-wrapper">
+					<input 
+						type="email" 
+						name="fields[email]" 
+						placeholder="Email" 
+						autocomplete="email" 
+						pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+						title="Please enter a valid email address."
+						required
+						>
+						<button type="submit">
+							<i></i>
+						</button>
+				</div>
 
-			</button>
+			</form>
+			<div style="display: flex; justify-content: center; align-items: center;">
+				<div class="preloader-wrapper active" id="loader" style="margin: 10px auto; display: none;">
+					<div class="spinner-layer spinner-blue-only">
+						<div class="circle-clipper left">
+							<div class="circle"></div>
+						</div>
+						<div class="gap-patch">
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</form>
+
 
 		<div id='thankYouMsg' class='thankYouMsg' ><p>Thank you for subscribing!</p> </div>
 
@@ -44,48 +56,57 @@
 	<div class="right">
 		<div class='overlay'> </div>
 		<img src="{% static 'icons/baseWallpaper.jpeg' %}" alt="Base Wallpaper"  />
-	<div>
+	</div>
 </div>
 
 
 
 <script>
+	
 	jQuery(document).ready(function () {
 		jQuery('#newsletter-form').on('submit', function (e) {
 			e.preventDefault();
-	
-			// Get the email input value
-			var email = jQuery('input[name="fields[email]"]').val();
-	
-			// Email validation regex pattern
-			var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-	
-			// Validate email format
+			const email = jQuery('input[name="fields[email]"]').val();
+			const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 			if (!emailPattern.test(email)) {
-				M.toast({html: 'Please enter a valid email address.'})
-				return; // Prevent form submission if email is invalid
+				M.toast({html: 'Please enter a valid email address.'});
+				return;
 			}
-	
-			// If valid email, proceed with the AJAX request
-			jQuery.ajax({
-				url: 'https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe',
-				dataType: 'jsonp',
-				data: {
-					'fields[email]': email
+			jQuery('#loader').fadeIn();
+			grecaptcha.enterprise.ready(async () => {
+				try {
+					const token = await grecaptcha.enterprise.execute('6LfazyUrAAAAALiWu4NPyAOfP2E99XmeFHIxOKuG', {action: 'submit'});
+					jQuery.ajax({
+						url: 'https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe',
+						dataType: 'jsonp',
+						data: {
+							'fields[email]': email,
+							'g-recaptcha-response': token
+						},
+						success: function (response) {
+							jQuery('#loader').fadeOut();
+							if (response.success) {
+								document.getElementById("newsletter-form").style.display = "none";
+								document.getElementById("thankYouMsg").style.display = "block";
+								M.toast({html: 'Thank you for subscribing.'});
+								jQuery('#newsletter-form')[0].reset();
+							} else {
+								console.log('Error response:', response);
+								M.toast({html: 'Something went wrong.'});
+							}
 				},
-				success: function (response) {
-					if (response.success) {
-						document.getElementById("newsletter-form").style.display = "none";
-						document.getElementById("thankYouMsg").style.display = "block";
-						M.toast({html: 'Thank you for subscribing. '})
-						
-						jQuery('#newsletter-form')[0].reset();
-					} else {
-						console.log('Error response:', response);
-						M.toast({html: 'Something went wrong. '})
-					}
+				error: function (xhr, status, error) {
+					jQuery('#loader').fadeOut();
+					console.error('AJAX error:', error);
+					M.toast({html: 'Server error. Please try again later.'});
 				}
 			});
+		} catch (err) {
+			jQuery('#loader').fadeOut();
+			console.error('reCAPTCHA error:', err);
+			M.toast({html: 'reCAPTCHA failed. Please try again.'});
+			}
+		});
 		});
 	});
 </script>

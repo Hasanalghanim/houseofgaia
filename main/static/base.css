@@ -36,7 +36,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 2.5rem;
 }
 .left h4 {
 	font-size: 48px;
@@ -94,7 +94,7 @@ body {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
 	display: flex;
 	align-items: center;
-	padding: .5rem 1rem;
+	padding: .5rem 2.5rem;
 	transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -122,8 +122,6 @@ body {
 		background-color: #fff; /* White background */
 		color: black; /* Text and arrow color */
 		border: 0px solid #ddd; /* Light gray border for the button */
-		
-		
 		padding: 10px 15px;
 		margin-left: 10px;
 		cursor: pointer;
