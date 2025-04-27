@@ -22,7 +22,8 @@ body {
 	display: flex;
 	justify-content: center;
 	height: 100vh; /* Full screen height */
-	min-width: 100%;
+	min-width: 99%;
+	max-width: 99%;
 	padding: 0;
 }
 
@@ -153,7 +154,11 @@ body {
 		font-size: 14px;
 		color: #9e9e9e;
 }
-
+#newsletter-form {
+	display: flex;
+	flex-direction: column;
+	gap:1.75rem
+}
 .thankYouMsg {
 	display: none;
 }
@@ -161,14 +166,29 @@ body {
 	display: block; /* Will make it visible when the 'visible' class is added */
 }
 
+/* Make input and wrapper same width */
+#newsletter-form .input-wrapper,
+#newsletter-form input[type="email"],
+#newsletter-form .g-recaptcha {
+    width: 100%;
+    max-width: 400px; /* set a nice max-width */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
+/* Scale reCAPTCHA */
+#newsletter-form .g-recaptcha {
+    transform: scale(1.05); /* adjust this value as needed */
+    transform-origin: 0 0; /* so it scales from top left */
+}
 @media (max-width: 991px) {
 	.container {
 		display: flex;
 		justify-content: center;
 		flex-direction: column-reverse;
 		height: 100vh; /* Full screen height */
-		min-width: 100%;
+		min-width: 99vw;
+		max-width: 99vw;
 		padding: 0;
 		gap:5rem
 	}
