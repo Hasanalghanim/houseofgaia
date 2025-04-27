@@ -48,16 +48,30 @@
 		
 
 		<div class="icons">
-			<div><img src="{% static 'icons/facebook.png' %}" alt="Facebook Icon" /></div>
-			<div><img src="{% static 'icons/instagram.png' %}" alt="Instagram Icon" /></div>
-			<div><img src="{% static 'icons/tiktok.png' %}" alt="TikTok Icon" /></div>
+			<div>
+				<img src="{% static 'icons/facebook.png' %}" alt="Facebook Icon" />
+			</div>
+			
+			<a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr" target='_blank'>
+				<div>
+					<img src="{% static 'icons/instagram.png' %}" alt="Instagram Icon" />
+				</div>
+			</a>
+			<a href="https://www.tiktok.com/@houseofgaiaco" target='_blank'>
+				<div>
+					<img src="{% static 'icons/tiktok.png' %}" alt="TikTok Icon" />
+				</div>
+			</a>
 		</div>
 	</div>
 
 	<div class="right">
 		<div class='overlay'> </div>
-		<img src="{% static 'icons/baseWallpaper.jpeg' %}" alt="Base Wallpaper"  />
+
+		<img id="baseWallpaper" data-small="{% static 'icons/baseWallpaperSmall.jpeg' %}" data-large="{% static 'icons/baseWallpaper.jpeg' %}" alt="Base Wallpaper" />
+	
 	</div>
+	
 </div>
 
 

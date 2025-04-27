@@ -15,6 +15,7 @@ body {
 	font-weight: 500 !important;
 	background: #faf3eb; 
 
+
 }
 
 .container {
@@ -160,6 +161,7 @@ body {
 	display: block; /* Will make it visible when the 'visible' class is added */
 }
 
+
 @media (max-width: 991px) {
 	.container {
 		display: flex;
@@ -194,9 +196,12 @@ body {
 		text-overflow: ellipsis;
 		margin: 0;
 	}
-
-	.icons img {
-		height: 17.92px;
-		width: 17.92px;
+	.icons {
+	margin-bottom: 5rem;
 	}
+	.icons img {
+		height: 24px;
+		width: 24px;
+	}
+	
 }
