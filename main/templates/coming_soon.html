@@ -25,8 +25,9 @@
 						<button type="submit">
 							<i></i>
 						</button>
+						
 				</div>
-
+				<div class="g-recaptcha" data-sitekey="6LcN9iUrAAAAAGIBSjKASbvEKFmxPUcBRnthBrbs"></div>
 			</form>
 			<div style="display: flex; justify-content: center; align-items: center;">
 				<div class="preloader-wrapper active" id="loader" style="margin: 10px auto; display: none;">
@@ -73,15 +74,22 @@
 				return;
 			}
 			jQuery('#loader').fadeIn();
-			grecaptcha.enterprise.ready(async () => {
+		
 				try {
-					const token = await grecaptcha.enterprise.execute('6LfazyUrAAAAALiWu4NPyAOfP2E99XmeFHIxOKuG', {action: 'submit'});
+					const recaptchaResponse = grecaptcha.getResponse();
+					if (recaptchaResponse.length === 0) {
+						M.toast({html: 'Please complete the CAPTCHA.'});
+						jQuery('#loader').fadeOut();
+						return;
+					}
+
+			
 					jQuery.ajax({
 						url: 'https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe',
 						dataType: 'jsonp',
 						data: {
 							'fields[email]': email,
-							'g-recaptcha-response': token
+							'g-recaptcha-response': recaptchaResponse
 						},
 						success: function (response) {
 							jQuery('#loader').fadeOut();
@@ -108,7 +116,7 @@
 			}
 		});
 		});
-	});
+	;
 </script>
 
 
