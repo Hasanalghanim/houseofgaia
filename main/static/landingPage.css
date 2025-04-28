@@ -1,0 +1,294 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Merriweather', sans-serif !important;
+	font-weight: 400;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Merriweather', sans-serif !important;
+	font-weight: 400;
+	background: #faf3eb;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100vh; /* Full screen height */
+	min-width: 100%;
+	max-width: 100%;
+	gap: 2.5rem;
+}
+
+.landingPageMainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100vh; /* Full screen height */
+	min-width: 100%;
+	max-width: 100%;
+	gap: 2.5rem;
+}
+
+.landingPageBackgroundPhoto {
+	background-size: cover;
+	background-color: white;
+	background-position: center;
+	width: 100%;
+	min-height: 31.75rem;
+}
+
+.backgroundPhotoCover {
+	min-width: 100%;
+	height: 31.75rem;
+	background-color: #222222;
+	position: absolute;
+	opacity: 40%;
+}
+.landingPageMainQuote {
+	min-width: 100%;
+	height: 31.75rem;
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.landingPageMainContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.landingPageMainContent h2 {
+	font-size: 50px; /* slightly smaller font so letters fit better */
+	text-transform: uppercase;
+	font-style: italic;
+	white-space: nowrap;
+	letter-spacing: 1.5vw; /* spread the letters wider */
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.landingPageSecondaryContent {
+	width: 75%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.landingPageSecondaryContentParaOne {
+	text-align: center;
+	font-size: 13px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.landingPageSecondaryContentParaTwo {
+	text-align: center;
+	font-size: 11px;
+	font-weight: 400;
+}
+
+.verticalBar {
+	height: 4rem;
+	width: 0.1rem;
+	background-color: #222222;
+	margin: auto;
+	border-radius: 50px;
+}
+.newsletterSection {
+	background-color: #faf3eb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.newsletterSection p {
+	font-size: 13px;
+	font-weight: 400;
+	text-align: center;
+}
+
+.icons {
+	display: flex;
+	width: 50%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.icons img {
+	height: 33.91px;
+	width: 33.91px;
+}
+/* Paper style input container */
+.input-wrapper {
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 2.5rem;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect to mimic paper */
+.input-wrapper:hover {
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Paper style input field */
+.input-wrapper input {
+	border: none;
+	box-shadow: none;
+	padding: 10px;
+	font-size: 16px;
+	width: 100%;
+	border-radius: 4px;
+}
+
+.input-wrapper input:focus {
+	outline: none;
+}
+
+/* Submit button styling */
+.input-wrapper button {
+	background-color: #fff; /* White background */
+	color: black; /* Text and arrow color */
+	border: 0px solid #ddd; /* Light gray border for the button */
+	padding: 10px 15px;
+	margin-left: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-wrapper button:hover {
+	background-color: #faf3eb; /* Slightly darker background on hover */
+}
+
+.input-wrapper button i {
+	font-size: 18px;
+	margin-left: 5px;
+}
+
+/* Right arrow icon */
+.input-wrapper button i:before {
+	content: '\2192'; /* Unicode for right arrow */
+}
+
+/* Label */
+.input-wrapper label {
+	position: absolute;
+	top: -18px;
+	left: 10px;
+	font-size: 14px;
+	color: #9e9e9e;
+}
+#newsletter-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+}
+.thankYouMsg {
+	display: none;
+}
+.thankYouMsg.visible {
+	display: block; /* Will make it visible when the 'visible' class is added */
+}
+
+/* Make input and wrapper same width */
+#newsletter-form .input-wrapper,
+#newsletter-form input[type='email'],
+#newsletter-form .g-recaptcha {
+	width: 100%;
+	max-width: 400px; /* set a nice max-width */
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+/* Scale reCAPTCHA */
+#newsletter-form .g-recaptcha {
+	transform: scale(1.05); /* adjust this value as needed */
+	transform-origin: 0 0; /* so it scales from top left */
+}
+
+.footer {
+	.footerBar {
+		width: 100%;
+		height: 2.8rem;
+		background-color: white;
+		margin: auto;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+/* IPAD */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.landingPageMainContainer {
+		gap: 7rem;
+	}
+	.landingPageSecondaryContent {
+		gap: 4rem;
+	}
+	.landingPageMainContent h2 {
+		font-size: 124px;
+	}
+	.landingPageSecondaryContentParaOne {
+		font-size: 32px;
+	}
+
+	.landingPageSecondaryContentParaTwo {
+		font-size: 28px;
+	}
+	.newsletterSection p {
+		font-size: 20px;
+	}
+	.icons {
+		width: 50%;
+	}
+
+	.icons img {
+		height: 33.91px;
+		width: 33.91px;
+	}
+}
+
+/* WINDOPWES */
+@media (min-width: 1024px) {
+	.landingPageMainContainer {
+		gap: 8rem;
+	}
+	.landingPageSecondaryContent {
+		gap: 4rem;
+	}
+	.landingPageMainContent h2 {
+		font-size: 160px;
+	}
+	.landingPageSecondaryContentParaOne {
+		font-size: 32px;
+	}
+
+	.landingPageSecondaryContentParaTwo {
+		font-size: 28px;
+	}
+	.newsletterSection p {
+		font-size: 24px;
+	}
+	.icons {
+		width: 25%;
+	}
+}

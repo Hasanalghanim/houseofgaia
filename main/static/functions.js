@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
-    function updateBackgroundImages() {
-        const wallPaper = document.getElementById('baseWallpaper');
-        const originalUrl = wallPaper.getAttribute('data-small');
-        const croppedUrl = wallPaper.getAttribute('data-large');
+	function updateBackgroundImages() {
+		const wallPaper = document.getElementById('landingPageBackgroundPhoto');
+		const originalUrl = wallPaper.getAttribute('originalUrl');
+		const croppedUrl = wallPaper.getAttribute('croppedUrl');
 
-        // Check window size and update image file name
-        if (window.innerWidth <= 991) {
-            wallPaper.src = originalUrl;  // Use the small image for smaller screens
-        } else {
-            wallPaper.src = croppedUrl;   // Use the large image for larger screens
-        }
+		// Switch based on screen size
+		if (window.innerWidth <= 991) {
+			wallPaper.style.backgroundImage = `url('${croppedUrl}')`;
+		} else {
+			wallPaper.style.backgroundImage = `url('${originalUrl}')`;
+		}
 
-        // Log the updated image source (for debugging purposes)
-        console.log(wallPaper.src);
-    }
+		console.log('Background image updated to:', wallPaper.style.backgroundImage);
+	}
 
-    // Call the function on initial load
-    updateBackgroundImages();
+	// Update on load
+	updateBackgroundImages();
 
-    // Update the image on window resize
-    window.addEventListener('resize', updateBackgroundImages);
+	// Update on resize
+	window.addEventListener('resize', updateBackgroundImages);
 });
+function setFooterYear() {
+	const yearElement = document.getElementById('footer-year');
+	const currentYear = new Date().getFullYear();
+	yearElement.textContent = currentYear;
+}
+window.onload = setFooterYear;
