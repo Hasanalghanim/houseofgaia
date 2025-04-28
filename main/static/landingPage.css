@@ -63,10 +63,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 
 .landingPageMainContent h1 {
-	font-size: 50px; /* slightly smaller font so letters fit better */
+	font-size: 40px; /* slightly smaller font so letters fit better */
 	text-transform: uppercase;
 	font-style: italic;
 	white-space: nowrap;
@@ -74,6 +75,14 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
+}
+
+.landingPageMainContent h2 {
+	font-size: 32px; /* slightly smaller font so letters fit better */
+	text-transform: uppercase;
+
+	white-space: nowrap;
+	letter-spacing: 1.5vw; /* spread the letters wider */
 }
 
 .landingPageSecondaryContent {
@@ -153,9 +162,16 @@ body {
 	}
 
 	.landingPageMainContent h1 {
-		font-size: 124px;
+		font-size: 100px;
 		letter-spacing: 1.5vw;
 	}
+	.landingPageMainContent h2 {
+		font-size: 32px; /* slightly smaller font so letters fit better */
+		text-transform: uppercase;
+
+		white-space: nowrap;
+	}
+
 	.landingPageSecondaryContentParaOne {
 		font-size: 32px;
 	}
@@ -189,8 +205,15 @@ body {
 		gap: 4rem;
 	}
 	.landingPageMainContent h1 {
-		font-size: 160px;
+		font-size: 60px;
 		letter-spacing: 3vw;
+	}
+
+	.landingPageMainContent h2 {
+		font-size: 32px; /* slightly smaller font so letters fit better */
+		text-transform: uppercase;
+
+		white-space: nowrap;
 	}
 	.landingPageSecondaryContentParaOne {
 		font-size: 32px;
