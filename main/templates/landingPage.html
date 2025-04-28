@@ -40,10 +40,14 @@ endblock %} {% endcomment %} {% block content %}
 		<div class="verticalBar"></div>
 	</div>
 	<div class="newsletterSection">
+		{% comment %}
 		<p>
 			Sign up for our newsletter and get exclusive offers, piercing trends, and updates on our upcoming grand
 			opening! Be the first to know!
 		</p>
+		{% endcomment %}
+		<div class="ml-embedded" data-form="UH9fj9"></div>
+		{% comment %}
 		<form action="#" method="post" target="_blank" id="newsletter-form">
 			<div class="input-wrapper">
 				<input
@@ -62,6 +66,7 @@ endblock %} {% endcomment %} {% block content %}
 
 			<div class="g-recaptcha" data-sitekey="6LcN9iUrAAAAAGIBSjKASbvEKFmxPUcBRnthBrbs"></div>
 		</form>
+		{% endcomment %}
 		<div style="display: flex; justify-content: center; align-items: center">
 			<div class="preloader-wrapper active" id="loader" style="margin: 10px auto; display: none">
 				<div class="spinner-layer spinner-blue-only">
@@ -97,6 +102,7 @@ endblock %} {% endcomment %} {% block content %}
 	<footer class="footerBar">&copy; <span id="footer-year"></span> <span> All Rights reserved.</span></footer>
 </div>
 
+{% comment %}
 <script>
 	jQuery(document).ready(function () {
 		jQuery('#newsletter-form').on('submit', function (e) {
@@ -150,5 +156,4 @@ endblock %} {% endcomment %} {% block content %}
 		});
 	});
 </script>
-
-{% endblock %}
+{% endcomment %} {% endblock %}
