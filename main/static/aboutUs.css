@@ -1,15 +1,26 @@
 .aboutUsGeneralText h1 {
 	font-style: italic;
-	font-size: 48px;
+	font-size: 32px;
 }
 
 .aboutUsGeneralText p {
 	font-style: italic;
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 400;
 }
 .aboutUsGeneralText span {
 	font-style: italic;
+	font-weight: 400;
+}
+
+.aboutOwnerGeneralText h1 {
+	font-style: italic;
+	font-size: 32px;
+}
+
+.aboutOwnerGeneralText p {
+	font-style: italic;
+	font-size: 18px;
 	font-weight: 400;
 }
 .aboutUsDivider {
@@ -21,7 +32,7 @@
 
 	justify-content: center;
 	align-items: center;
-	gap: 183px;
+	gap: 80px;
 }
 .aboutUsGeneralContainer {
 	display: flex;
@@ -72,7 +83,7 @@
 
 		justify-content: center;
 		align-items: center;
-		gap: 183px;
+		gap: 100px;
 	}
 	.aboutUsGeneralContainer {
 		display: flex;
@@ -182,18 +193,5 @@
 		justify-content: center;
 		text-align: end;
 		gap: 2rem;
-	}
-	.aboutOwnerGeneralText h1 {
-		margin: 0px;
-		font-style: italic;
-		font-size: 48px;
-	}
-	.aboutOwnerGeneralText p {
-		font-style: italic;
-		font-size: 22px;
-		font-weight: 400;
-	}
-	.aboutOwnerGeneralText span {
-		font-weight: 400;
 	}
 }
