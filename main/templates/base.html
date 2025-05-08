@@ -1,55 +1,153 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		{% block meta %}
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<title>{% block title %}House of Gaia{% endblock %}</title>
-		<meta
-			name="description"
-			content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}"
-		/>
-		<meta name="keywords" content="House of Gaia, luxury, natural beauty, piercings" />
-		<meta name="author" content="House of Gaia" />
-
-		<!-- Open for social sharing info-->
-		<meta property="og:title" content="House of Gaia" />
-		<meta property="og:description" content="Luxury piercings and jewelry studio." />
-		<meta property="og:image" content="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}" />
-		<meta property="og:url" content="https://houseofgaia.ca" />
-		<meta name="twitter:card" content="summary_large_image" />
-		{% endblock %}
-
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
-		{% comment %}
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		{% endcomment %} {% comment %}
-		<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
-		{% endcomment %}
-		<link rel="stylesheet" type="text/css" href="{% static 'landingPage.css' %}" />
-	</head>
-	<body>
-		{% block content %} {% endblock %}
-
-		<script type="text/javascript" src="{% static 'functions.js' %}"></script>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-		<!-- MailerLite Universal -->
-		<script>
+    <head>
+        {% block meta %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>
+                {% block title %}House of Gaia{% endblock %}
+            </title>
+            <meta name="description"
+                  content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}" />
+            <meta name="keywords"
+                  content="House of Gaia, luxury, natural beauty, piercings" />
+            <meta name="author" content="House of Gaia" />
+            <!-- Open for social sharing info-->
+            <meta property="og:title" content="House of Gaia" />
+            <meta property="og:description"
+                  content="Luxury piercings and jewelry studio." />
+            <meta property="og:image"
+                  content="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}" />
+            <meta property="og:url" content="https://houseofgaia.ca" />
+            <meta name="twitter:card" content="summary_large_image" />
+        {% endblock %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!--  Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet" />
+        <!--  Google fonts  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://db.onlinewebfonts.com/c/65c79a29b6ed725883911cb318380955?family=Gilmer+Regular"
+              rel="stylesheet" />
+        <!--  Jquery  -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!--  materialize css -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+              rel="stylesheet" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'landingPage.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'aboutUs.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="navbar">
+                    <div class="nav-wrapper container">
+                        <!-- Mobile Menu Trigger -->
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger left">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <!-- Left-Aligned Links (About Us) -->
+                        <ul class="left hide-on-med-and-down">
+                            <li>
+                                <a href="{% url 'redirect_to_home' %}">HOME</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}">ABOUT</a>
+                            </li>
+                        </ul>
+                        <!-- Centered Logo -->
+                        <a href="{% url 'redirect_to_home' %}"
+                           class="brand-logo center brandLogo">House of Gaia</a>
+                        <!-- Right-Aligned Button (Book Appointment) -->
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="sidenav" id="mobile-nav">
+                <div class="sidebar-container">
+                    <div class="sideBarCloseBtn">
+                        <li class="large material-icons">close</li>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{% url 'redirect_to_home' %}" class="sidebar-links">HOME</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 footer-row">
+                        <div class="icons">
+                            <div>
+                                <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" />
+                            </div>
+                            <a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr"
+                               target="_blank">
+                                <div>
+                                    <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" />
+                                </div>
+                            </a>
+                            <a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
+                                <div>
+                                    <img src="{% static 'icons/tiktok.svg' %}" alt="TikTok Icon" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 footer-row">
+                        <ul class="footer-row">
+                            <li>
+                                <a class="grey-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">BOOK ONLINE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="{% static 'functions.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- MailerLite Universal -->
+        <script>
 			(function (w, d, e, u, f, l, n) {
 				(w[f] =
 					w[f] ||
@@ -63,7 +161,11 @@
 					n.parentNode.insertBefore(l, n);
 			})(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
 			ml('account', '1479163');
-		</script>
-		<!-- End MailerLite Universal -->
-	</body>
+			document.addEventListener('DOMContentLoaded', function () {
+				var elems = document.querySelectorAll('.sidenav');
+				M.Sidenav.init(elems);
+			});
+        </script>
+        <!-- End MailerLite Universal -->
+    </body>
 </html>

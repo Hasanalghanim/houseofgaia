@@ -1,162 +1,60 @@
-{% extends "base.html" %} {% load static %} {% comment %} {% block title %}Coming Soon | House of Gaia{% endblock %} {%
-block description %} We’re almost ready to launch something beautiful. Stay tuned!{% endblock %} {% block og_title
-%}Coming Soon | House of Gaia{% endblock %} {% block og_description %}A new luxury piercing studio is on the way!{%
-endblock %} {% endcomment %} {% block content %}
-
-<div class="landingPageMainContainer">
-	<div
-		class="landingPageBackgroundPhoto"
-		id="landingPageBackgroundPhoto"
-		croppedUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}"
-		originalUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}"
-	>
-		<div class="landingPageMainQuote"></div>
-		<div class="backgroundPhotoCover"></div>
-	</div>
-
-	<div class="landingPageMainContent">
-		<h2>Welcome To</h2>
-		<h1>House Of Gaia</h1>
-	</div>
-
-	<div class="landingPageSecondaryContent">
-		<p class="landingPageSecondaryContentParaOne">
-			Discover the art of piercing at House of Gaia, the premier luxury piercing studio serving St. Albert, Edmonton,
-			and surrounding areas.
-		</p>
-		<p class="landingPageSecondaryContentParaTwo">
-			We specialize in professional ear and nose piercings, offering a personalized and elevated experience in a
-			serene, modern environment. Our expert piercer is dedicated to quality, safety, and personal expression,
-			ensuring every client leaves with a piece that feels uniquely theirs.
-		</p>
-
-		<p class="landingPageSecondaryContentParaTwo">
-			From custom ear styling to precision placements, every service at House of Gaia is designed with your vision in
-			mind. Whether you're planning your first piercing or curating your perfect earscape, experience the finest in
-			luxury piercing at House of Gaia — where artistry, comfort, and excellence meet.
-		</p>
-	</div>
-
-	<div class="verticalBarContainer">
-		<div class="verticalBar"></div>
-	</div>
-	<div class="newsletterSection">
-		{% comment %}
-		<p>
-			Sign up for our newsletter and get exclusive offers, piercing trends, and updates on our upcoming grand
-			opening! Be the first to know!
-		</p>
-		{% endcomment %}
-		<div class="ml-embedded" data-form="UH9fj9"></div>
-		{% comment %}
-		<form action="#" method="post" target="_blank" id="newsletter-form">
-			<div class="input-wrapper">
-				<input
-					type="email"
-					name="fields[email]"
-					placeholder="Email"
-					autocomplete="email"
-					pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-					title="Please enter a valid email address."
-					required
-				/>
-				<button type="submit">
-					<i></i>
-				</button>
-			</div>
-
-			<div class="g-recaptcha" data-sitekey="6LcN9iUrAAAAAGIBSjKASbvEKFmxPUcBRnthBrbs"></div>
-		</form>
-		{% endcomment %}
-		<div style="display: flex; justify-content: center; align-items: center">
-			<div class="preloader-wrapper active" id="loader" style="margin: 10px auto; display: none">
-				<div class="spinner-layer spinner-blue-only">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div>
-					<div class="gap-patch">
-						<div class="circle"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		{% comment %}
-		<div id="thankYouMsg" class="thankYouMsg"><p>Thank you for subscribing!</p></div>
-		{% endcomment %}
-
-		<div class="icons">
-			<div>
-				<img src="{% static 'icons/facebook.png' %}" alt="Facebook Icon" />
-			</div>
-
-			<a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr" target="_blank">
-				<div>
-					<img src="{% static 'icons/instagram.png' %}" alt="Instagram Icon" />
-				</div>
-			</a>
-			<a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
-				<div>
-					<img src="{% static 'icons/tiktok.png' %}" alt="TikTok Icon" />
-				</div>
-			</a>
-		</div>
-	</div>
-	<footer class="footerBar">&copy; <span id="footer-year"></span> <span> All Rights reserved.</span></footer>
-</div>
-
-{% comment %}
-<script>
-	jQuery(document).ready(function () {
-		jQuery('#newsletter-form').on('submit', function (e) {
-			e.preventDefault();
-			const email = jQuery('input[name="fields[email]"]').val();
-			const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-			if (!emailPattern.test(email)) {
-				M.toast({ html: 'Please enter a valid email address.' });
-				return;
-			}
-			jQuery('#loader').fadeIn();
-
-			try {
-				const recaptchaResponse = grecaptcha.getResponse();
-				if (recaptchaResponse.length === 0) {
-					M.toast({ html: 'Please complete the CAPTCHA.' });
-					jQuery('#loader').fadeOut();
-					return;
-				}
-
-				jQuery.ajax({
-					url: 'https://assets.mailerlite.com/jsonp/1479163/forms/152673411254978402/subscribe',
-					dataType: 'jsonp',
-					data: {
-						'fields[email]': email,
-						'g-recaptcha-response': recaptchaResponse,
-					},
-					success: function (response) {
-						jQuery('#loader').fadeOut();
-						if (response.success) {
-							document.getElementById('newsletter-form').style.display = 'none';
-							document.getElementById('thankYouMsg').style.display = 'block';
-							M.toast({ html: 'Thank you for subscribing.' });
-							jQuery('#newsletter-form')[0].reset();
-						} else {
-							console.log('Error response:', response);
-							M.toast({ html: 'Something went wrong.' });
-						}
-					},
-					error: function (xhr, status, error) {
-						jQuery('#loader').fadeOut();
-						console.error('AJAX error:', error);
-						M.toast({ html: 'Server error. Please try again later.' });
-					},
-				});
-			} catch (err) {
-				jQuery('#loader').fadeOut();
-				console.error('reCAPTCHA error:', err);
-				M.toast({ html: 'reCAPTCHA failed. Please try again.' });
-			}
-		});
-	});
-</script>
-{% endcomment %} {% endblock %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}House of Gaia{% endblock %}
+{% block description %}
+    We’re
+    almost ready to launch something beautiful. Stay tuned!
+{% endblock %}
+{% block og_title %}House of Gaia{% endblock %}
+{% block og_description %}A new luxury piercing studio is on the way!{% endblock %}
+{% block content %}
+    <div class="landingPageBackgroundPhoto v-gap"
+         id="landingPageBackgroundPhoto"
+         croppedUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}"
+         originalUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}">
+        <div class="landingPageMainQuote"></div>
+        <div class="backgroundPhotoCover"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="col s12 center-align mainHeader">Defined by Elegance. Designed for You.</h1>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3 center-align v-gap">
+                Discover the art of piercing at House of Gaia, the premier luxury piercing studio serving St. Albert, Edmonton,
+                and surrounding areas.
+            </p>
+            <p class="col s12 m6 offset-m3 center-align v-gap">
+                We specialize in professional ear and nose piercings, offering a personalized and elevated experience in a
+                serene, modern environment. Our expert piercer is dedicated to quality, safety, and personal expression,
+                ensuring every client leaves with a piece that feels uniquely theirs.
+            </p>
+            <p class="col s12 m6 offset-m3 center-align v-gap">
+                From custom ear styling to precision placements, every service at House of Gaia is designed with your vision in
+                mind. Whether you're planning your first piercing or curating your perfect earscape, experience the finest in
+                luxury piercing at House of Gaia — where artistry, comfort, and excellence meet.
+            </p>
+        </div>
+        <div class="verticalBarContainer">
+            <div class="verticalBar"></div>
+        </div>
+        <div class="newsletterSection">
+            <div class="ml-embedded" data-form="UH9fj9"></div>
+            <div style="display: flex; justify-content: center; align-items: center">
+                <div class="preloader-wrapper active"
+                     id="loader"
+                     style="margin: 10px auto;
+                            display: none">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

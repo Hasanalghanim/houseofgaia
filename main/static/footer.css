@@ -1,0 +1,10 @@
+.page-footer {
+	background-color: #8b7968 !important;
+	margin-top: 10vh;
+}
+.footer-row {
+	width: 100%;
+	display: flex !important;
+	justify-content: center !important;
+	gap: 2.5rem;
+}

@@ -1,0 +1,199 @@
+.aboutUsGeneralText h1 {
+	font-style: italic;
+	font-size: 48px;
+}
+
+.aboutUsGeneralText p {
+	font-style: italic;
+	font-size: 22px;
+	font-weight: 400;
+}
+.aboutUsGeneralText span {
+	font-style: italic;
+	font-weight: 400;
+}
+.aboutUsDivider {
+	min-height: 100px;
+}
+.aboutUsContentGap {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	gap: 183px;
+}
+.aboutUsGeneralContainer {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.aboutUsGeneralText {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 2rem;
+}
+
+.aboutUsGeneralImage {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.aboutUsGeneralImage img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* Fit image without cropping or blurring */
+}
+
+.aboutOwnerGeneralContainer {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.aboutOwnerGeneralText {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 2rem;
+}
+/* IPAD */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.aboutUsContentGap {
+		display: flex;
+		flex-direction: column;
+
+		justify-content: center;
+		align-items: center;
+		gap: 183px;
+	}
+	.aboutUsGeneralContainer {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.aboutUsGeneralText {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 2rem;
+	}
+
+	.aboutUsGeneralImage {
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	.aboutUsGeneralImage img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain; /* Fit image without cropping or blurring */
+	}
+
+	.aboutOwnerGeneralContainer {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.aboutOwnerGeneralText {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 2rem;
+	}
+}
+
+/* WINDOPWES */
+@media (min-width: 1024px) {
+	.aboutUsDivider {
+		min-height: 200px;
+	}
+
+	.aboutUsContentGap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 183px;
+	}
+	.aboutUsGeneralContainer {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		gap: 15%;
+	}
+
+	.aboutUsGeneralImage {
+		width: 100%;
+		height: 500px;
+		overflow: hidden;
+	}
+
+	.aboutUsGeneralImage img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.aboutUsGeneralText {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+		gap: 2rem;
+		text-align: start;
+	}
+
+	.ownerName {
+		width: 100%;
+		text-align: end;
+	}
+
+	.aboutUsGeneralText span {
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	.aboutOwnerGeneralContainer {
+		display: flex;
+		justify-content: center;
+		flex-direction: row-reverse;
+		gap: 15%;
+	}
+
+	.aboutOwnerGeneralText {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: end;
+		gap: 2rem;
+	}
+	.aboutOwnerGeneralText h1 {
+		margin: 0px;
+		font-style: italic;
+		font-size: 48px;
+	}
+	.aboutOwnerGeneralText p {
+		font-style: italic;
+		font-size: 22px;
+		font-weight: 400;
+	}
+	.aboutOwnerGeneralText span {
+		font-weight: 400;
+	}
+}

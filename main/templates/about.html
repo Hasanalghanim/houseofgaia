@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}House of Gaia{% endblock %}
+{% block description %}
+    We’re
+    almost ready to launch something beautiful. Stay tuned!
+{% endblock %}
+{% block og_title %}House of Gaia{% endblock %}
+{% block og_description %}A new luxury piercing studio is on the way!{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="aboutUsDivider"></div>
+        <div class="aboutUsContentGap">
+            <div class="aboutUsGeneralContainer">
+                <div class="aboutUsGeneralText">
+                    <h1>ABOUT US</h1>
+                    <p>
+                        Step into a world of luxury and self-expression at House of Gaia, St. Albert's leading woman-owned
+                        piercing studio.
+                    </p>
+                    <span>At House of Gaia, we focus on custom ear styling and expert piercing placements, reflecting your unique
+                        style and personality. Our team of professional piercers is dedicated to providing high-quality piercings
+                        while prioritizing client safety and satisfaction.
+                    </span>
+                    <span>Whether you're visiting for your first piercing or curating your perfect ear piercings, House of Gaia
+                        provides an exceptional, luxury experience in a serene, welcoming space. Trust us to bring your vision to
+                        life with top-tier artistry and care.
+                    </span>
+                </div>
+                <div class="aboutUsGeneralImage">
+                    <img src="{% static 'aboutUsImage.jpeg' %}" />
+                </div>
+            </div>
+            <div class="aboutOwnerGeneralContainer">
+                <div class="aboutOwnerGeneralText">
+                    <div class="ownerName">
+                        <h1>MEET NADIA</h1>
+                        <span>Owner & Piercer</span>
+                    </div>
+                    <p>
+                        This love for piercings has driven me to not only pursue my dream but also to create something truly
+                        special — a safe, welcoming space for women and children.
+                    </p>
+                    <span>As the owner and piercer at House of Gaia, I’m committed to providing an experience that prioritizes
+                        safety, comfort, and personal expression. My goal is to ensure that every client feels empowered and
+                        confident, whether it's their first piercing or they’re adding to their collection.
+                    </span>
+                    <span>
+                        In my spare time, I enjoy spending quality moments with family and friends, cherishing the connections
+                        that keep me grounded and inspired. I’m also a huge cat lover, and nothing beats relaxing with my kitty
+                        at the end of a busy day. When I’m not working, you’ll often find me unwinding by playing video games or
+                        getting lost in a good piece of fiction.
+                    </span>
+                </div>
+                <div class="aboutUsGeneralImage">
+                    <img src="{% static 'ownerImage.jpeg' %}" />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
