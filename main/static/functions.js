@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const navbar = document.getElementById('navbar');
-	const brandLogo = document.getElementById('brandLogo');
-	const hamburgerMenu = document.getElementById('hamburgerMenu');
-	setTimeout(() => {
-		navbar.classList.remove('expanded');
-		brandLogo.classList.remove('expanded');
-		hamburgerMenu.classList.remove('hidden');
-	}, 1000);
+	if (!sessionStorage.getItem('animationPlayed')) {
+		setTimeout(() => {
+			document.getElementById('navbar')?.classList.remove('expanded');
+			document.getElementById('brandLogo')?.classList.remove('expanded');
+			document.getElementById('hamburgerMenu')?.classList.remove('hidden');
+		}, 1000);
+
+		// Mark animation as played
+		sessionStorage.setItem('animationPlayed', 'true');
+	} else {
+		// Immediately remove classes with no animation if revisiting another page
+		document.getElementById('navbar')?.classList.remove('expanded');
+		document.getElementById('brandLogo')?.classList.remove('expanded');
+		document.getElementById('hamburgerMenu')?.classList.remove('hidden');
+	}
+
 	function updateBackgroundImages() {
 		const wallPaper = document.getElementById('landingPageBackgroundPhoto');
 		const originalUrl = wallPaper.getAttribute('originalUrl');
