@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+	const navbar = document.getElementById('navbar');
+	const brandLogo = document.getElementById('brandLogo');
+	const hamburgerMenu = document.getElementById('hamburgerMenu');
+	setTimeout(() => {
+		navbar.classList.remove('expanded');
+		brandLogo.classList.remove('expanded');
+		hamburgerMenu.classList.remove('hidden');
+	}, 1000);
 	function updateBackgroundImages() {
 		const wallPaper = document.getElementById('landingPageBackgroundPhoto');
 		const originalUrl = wallPaper.getAttribute('originalUrl');

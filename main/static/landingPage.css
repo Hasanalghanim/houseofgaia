@@ -49,10 +49,12 @@ body {
 }
 .navbar {
 	background-color: #faf3eb !important;
-	/* height: 80px !important;
-	line-height: 80px !important; */
+	transition: height 1s ease-in-out !important;
 }
 
+.navbar.expanded {
+	height: 100vh !important;
+}
 .sidenav {
 	background-color: #8b7968 !important;
 }
@@ -69,12 +71,21 @@ body {
 	align-items: center !important;
 }
 .brand-logo img {
-	height: 50%;
+	height: 28px;
+	transition: height 1s ease-in-out !important;
+}
+
+.brand-logo img.expanded {
+	height: 28px;
 }
 .hamburgerMenu {
 	min-height: 100% !important;
 	display: flex;
 	align-items: center;
+	transition: 1s ease-in-out !important;
+}
+.hamburgerMenu.hidden {
+	display: none;
 }
 
 .navbar a {
@@ -147,7 +158,10 @@ body {
 		align-items: center !important;
 	}
 	.brand-logo img {
-		height: 60%;
+		height: 39px;
+	}
+	.brand-logo img.expanded {
+		height: 60px;
 	}
 }
 
@@ -160,7 +174,11 @@ body {
 		align-items: center !important;
 	}
 	.brand-logo img {
-		height: 70%;
+		height: 45px;
+	}
+
+	.brand-logo img.expanded {
+		height: 70px;
 	}
 
 	.booking-btn {

@@ -36,7 +36,7 @@
               rel="stylesheet" />
         <!--  Jquery  -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="icon" type="image/x-icon" href="{% static 'icons/icon.ico' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'icons/icon.ico' %}" />
         <!--  materialize css -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
               rel="stylesheet" />
@@ -49,12 +49,13 @@
     <body>
         <header>
             <div class="navbar-fixed">
-                <nav class="navbar">
+                <nav class="navbar expanded" id="navbar">
                     <div class="nav-wrapper container">
                         <!-- Mobile Menu Trigger -->
                         <a href="#"
                            data-target="mobile-nav"
-                           class="sidenav-trigger left hamburgerMenu">
+                           class="sidenav-trigger left hamburgerMenu hidden"
+                           id="hamburgerMenu">
                             <i class="material-icons">menu</i>
                         </a>
                         <!-- Left-Aligned Links (About Us) -->
@@ -68,7 +69,10 @@
                         </ul>
                         <!-- Centered Logo -->
                         <a href="{% url 'redirect_to_home' %}" class="brand-logo center">
-                            <img src="{% static 'icons/main.svg' %}" alt="Logo" class="brandLogo" />
+                            <img src="{% static 'icons/main.svg' %}"
+                                 id="brandLogo"
+                                 alt="Logo"
+                                 class="brandLogo expanded" />
                         </a>
                         <!-- Right-Aligned Button (Book Appointment) -->
                         <ul class="right hide-on-med-and-down">
