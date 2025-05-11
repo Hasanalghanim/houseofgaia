@@ -29,8 +29,64 @@ body {
 	box-shadow: none !important; /* Remove the shadow */
 }
 
+/* Fullscreen splash screen */
+#splashScreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	opacity: 1;
+	transition: opacity 1s ease;
+	visibility: visible; /* Keep it visible initially */
+}
+
+/* Logo animation - Fade In and Scale */
+#splashLogo {
+	width: 180px; /* Classy logo size */
+	opacity: 0;
+	transform: scale(0.8); /* Start smaller */
+	animation: fadeInScale 1.5s ease-out forwards; /* Smooth transition */
+}
+
+/* Fade In and Scale Up Animation */
+@keyframes fadeInScale {
+	0% {
+		opacity: 0;
+		transform: scale(0.8); /* Start smaller */
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1); /* Scale to normal size */
+	}
+}
+
+/* Fade-out effect for splash screen */
+#splashScreen.fade-out {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none; /* Prevent splash screen from interfering with interaction */
+}
+
+/* Main content - Initially hidden, will fade in */
+#mainContent {
+	opacity: 0;
+	visibility: hidden; /* Hidden initially */
+	transition: opacity 1s ease; /* Smooth fade-in */
+	display: block; /* Ensure the content takes space */
+}
+
+/* Show the main content after splash screen fade-out */
+#mainContent.show {
+	opacity: 1;
+	visibility: visible; /* Make the content visible */
+}
 .mainHeader {
-	font-size: 36px;
+	font-size: 30px;
 	font-style: italic;
 }
 
@@ -50,6 +106,8 @@ body {
 .navbar {
 	background-color: #faf3eb !important;
 	transition: height 1s ease-in-out !important;
+	height: 64px;
+	overflow: hidden;
 }
 
 .navbar.expanded {
@@ -82,10 +140,13 @@ body {
 	min-height: 100% !important;
 	display: flex;
 	align-items: center;
-	transition: 1s ease-in-out !important;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 .hamburgerMenu.hidden {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .navbar a {

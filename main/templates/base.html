@@ -47,114 +47,119 @@
         <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}" />
     </head>
     <body>
-        <header>
-            <div class="navbar-fixed">
-                <nav class="navbar expanded" id="navbar">
-                    <div class="nav-wrapper container">
-                        <!-- Mobile Menu Trigger -->
-                        <a href="#"
-                           data-target="mobile-nav"
-                           class="sidenav-trigger left hamburgerMenu hidden"
-                           id="hamburgerMenu">
-                            <i class="material-icons">menu</i>
-                        </a>
-                        <!-- Left-Aligned Links (About Us) -->
-                        <ul class="left hide-on-med-and-down">
-                            <li>
-                                <a href="{% url 'redirect_to_home' %}">HOME</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'about' %}">ABOUT</a>
-                            </li>
-                        </ul>
-                        <!-- Centered Logo -->
-                        <a href="{% url 'redirect_to_home' %}" class="brand-logo center">
-                            <img src="{% static 'icons/main.svg' %}"
-                                 id="brandLogo"
-                                 alt="Logo"
-                                 class="brandLogo expanded" />
-                        </a>
-                        <!-- Right-Aligned Button (Book Appointment) -->
-                        <ul class="right hide-on-med-and-down">
-                            <li>
-                                <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="sidenav" id="mobile-nav">
-                <div class="sidebar-container">
-                    <div class="sideBarCloseBtn">
-                        <li class="large material-icons">close</li>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="{% url 'redirect_to_home' %}" class="sidebar-links">HOME</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a>
-                        </li>
-                    </ul>
+        <div id="splashScreen">
+            <img src="{% static 'icons/main.svg' %}" id="splashLogo" alt="Logo" />
+        </div>
+        <div id="mainContent" style="visibility: hidden">
+            <header>
+                <div class="navbar-fixed">
+                    <nav class="navbar" id="navbar">
+                        <div class="nav-wrapper container">
+                            <!-- Mobile Menu Trigger -->
+                            <a href="#"
+                               data-target="mobile-nav"
+                               class="sidenav-trigger left hamburgerMenu"
+                               id="hamburgerMenu">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <!-- Left-Aligned Links (About Us) -->
+                            <ul class="left hide-on-med-and-down">
+                                <li>
+                                    <a href="{% url 'redirect_to_home' %}">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'about' %}">ABOUT</a>
+                                </li>
+                            </ul>
+                            <!-- Centered Logo -->
+                            <a href="{% url 'redirect_to_home' %}" class="brand-logo center">
+                                <img src="{% static 'icons/main.svg' %}"
+                                     id="brandLogo"
+                                     alt="Logo"
+                                     class="brandLogo" />
+                            </a>
+                            <!-- Right-Aligned Button (Book Appointment) -->
+                            <ul class="right hide-on-med-and-down">
+                                <li>
+                                    <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </div>
-        </header>
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 footer-row">
-                        <div class="icons">
-                            <div>
-                                <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" />
+                <div class="sidenav" id="mobile-nav">
+                    <div class="sidebar-container">
+                        <div class="sideBarCloseBtn">
+                            <li class="large material-icons">close</li>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="{% url 'redirect_to_home' %}" class="sidebar-links">HOME</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 footer-row">
+                            <div class="icons">
+                                <div>
+                                    <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" />
+                                </div>
+                                <a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr"
+                                   target="_blank">
+                                    <div>
+                                        <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" />
+                                    </div>
+                                </a>
+                                <a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
+                                    <div>
+                                        <img src="{% static 'icons/tiktok.svg' %}" alt="TikTok Icon" />
+                                    </div>
+                                </a>
                             </div>
-                            <a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr"
-                               target="_blank">
-                                <div>
-                                    <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" />
-                                </div>
-                            </a>
-                            <a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
-                                <div>
-                                    <img src="{% static 'icons/tiktok.svg' %}" alt="TikTok Icon" />
-                                </div>
-                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 footer-row">
+                            <ul class="footer-row">
+                                <li>
+                                    <a class="grey-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
+                                </li>
+                                <li>
+                                    <a class="grey-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
+                                </li>
+                                <li>
+                                    <a class="grey-text text-lighten-3" href="#!">BOOK ONLINE</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 footer-row">
-                        <ul class="footer-row">
-                            <li>
-                                <a class="grey-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">BOOK ONLINE</a>
-                            </li>
-                        </ul>
+                <div class="footer-copyright">
+                    <div class="container">
+                        &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
                     </div>
                 </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
-                </div>
-            </div>
-        </footer>
-        <script type="text/javascript" src="{% static 'functions.js' %}"></script>
+            </footer>
+        </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!-- MailerLite Universal -->
+        <script type="text/javascript" src="{% static 'functions.js'  %}" defer></script>
         <script>
 			(function (w, d, e, u, f, l, n) {
 				(w[f] =
