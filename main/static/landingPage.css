@@ -28,9 +28,7 @@ body {
 .btn-flat {
 	box-shadow: none !important; /* Remove the shadow */
 }
-.brandLogo {
-	font-size: 20px !important;
-}
+
 .mainHeader {
 	font-size: 36px;
 	font-style: italic;
@@ -51,6 +49,8 @@ body {
 }
 .navbar {
 	background-color: #faf3eb !important;
+	/* height: 80px !important;
+	line-height: 80px !important; */
 }
 
 .sidenav {
@@ -61,8 +61,25 @@ body {
 	font-size: 18px !important;
 	color: white !important;
 }
+
+.brand-logo {
+	height: 100% !important;
+	display: flex !important;
+
+	align-items: center !important;
+}
+.brand-logo img {
+	height: 50%;
+}
+.hamburgerMenu {
+	min-height: 100% !important;
+	display: flex;
+	align-items: center;
+}
+
 .navbar a {
 	color: black !important;
+	font-size: 0.8rem !important;
 }
 
 .sidebar-container {
@@ -123,16 +140,29 @@ body {
 
 /* IPAD */
 @media (min-width: 768px) and (max-width: 1024px) {
-	.brandLogo {
-		font-size: 32px !important;
+	.brand-logo {
+		height: 100% !important;
+		display: flex !important;
+
+		align-items: center !important;
+	}
+	.brand-logo img {
+		height: 60%;
 	}
 }
 
 /* WINDOPWES */
 @media (min-width: 1024px) {
-	.brandLogo {
-		font-size: 32px !important;
+	.brand-logo {
+		height: 100% !important;
+		display: flex !important;
+
+		align-items: center !important;
 	}
+	.brand-logo img {
+		height: 70%;
+	}
+
 	.booking-btn {
 		border: solid black 0.5px !important;
 		border-radius: 25px !important;
