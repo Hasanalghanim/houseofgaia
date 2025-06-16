@@ -1,5 +1,7 @@
+import requests
 from ckeditor.fields import RichTextField
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
@@ -35,6 +37,10 @@ class BlogPost(models.Model):
         format='JPEG',
         options={'quality': 80}
     )
+
+
+    def get_absolute_url(self):
+        return reverse('blogDetail', kwargs={'slug': self.slug})
     def save(self, *args, **kwargs):
         if not self.slug:
            
@@ -44,6 +50,14 @@ class BlogPost(models.Model):
             while BlogPost.objects.filter(slug=self.slug).exists():
                 self.slug = f"{slugify(self.title)}-{BlogPost.objects.filter(slug=self.slug).count() + 1}"
 
+
+
+        try:
+            sitemap_url = f"https://www.houseofgaia.ca/sitemap.xml"
+            requests.get(f"https://www.google.com/ping?sitemap={sitemap_url}", timeout=5)
+            requests.get(f"https://www.bing.com/ping?sitemap={sitemap_url}", timeout=5)
+        except requests.RequestException:
+            pass 
         super().save(*args, **kwargs)
 
 
@@ -51,3 +65,8 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+
+
+

@@ -8,7 +8,8 @@ from . import views
 
 # Define your sitemaps
 sitemaps = {
-    'static': custom_sitemap.StaticViewSitemap,  # Reference your custom sitemap class
+    'static': custom_sitemap.StaticViewSitemap, 
+    'blogs': custom_sitemap.BlogSitemap,
 }
 
 urlpatterns = [
