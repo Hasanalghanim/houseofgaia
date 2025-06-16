@@ -1,17 +1,37 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+
+from .models import BlogPost
 
 
-# Create your views here.
 def landingPage(request):
-
-    # return render(request, "coming_soon.html",)
-    return render(request, "landingPage.html",)
+    posts = BlogPost.objects.order_by('-id')[:3] 
+    return render(request, "landingPage.html", {'blogs': posts})
 
 
 
 # Create your views here.
 def about(request):
-
-    # return render(request, "coming_soon.html",)
     return render(request, "about.html",)
 
+
+def allBlogs(request):
+    posts = BlogPost.objects.order_by('-id') 
+    return render(request, "allBlogs.html", {'blogs': posts})
+
+
+def blogDetail(request,slug):
+    blog = get_object_or_404(BlogPost, slug=slug)
+    return render(request, "blogDetail.html", {"blog": blog})
+
+
+
+
+
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Disallow:",
+        "Sitemap: https://houseofgaia.ca/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")

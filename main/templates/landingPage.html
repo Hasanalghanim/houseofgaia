@@ -1,60 +1,103 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}House of Gaia{% endblock %}
+{% block title %}Luxury Piercings and Curated Jewelry  | House of Gaia{% endblock %}
 {% block description %}
     We’re
     almost ready to launch something beautiful. Stay tuned!
 {% endblock %}
-{% block og_title %}House of Gaia{% endblock %}
+{% block og_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}
 {% block og_description %}A new luxury piercing studio is on the way!{% endblock %}
 {% block content %}
-    <div class="landingPageBackgroundPhoto v-gap"
+    <div class="landingPageBackgroundPhoto"
          id="landingPageBackgroundPhoto"
          croppedUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}"
          originalUrl="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}">
-        <div class="landingPageMainQuote"></div>
-        <div class="backgroundPhotoCover"></div>
+        <div class="landingPageMainQuote">
+            <h1>
+                LUXURY PIERCINGS&nbsp;&nbsp;&
+            </br>
+            CURATED JEWELRY
+        </h1>
+        <a class="waves-effect waves-light btn bookNowBtn">BOOK NOW</a>
     </div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col s12 center-align mainHeader">Defined by Elegance. Designed for You.</h1>
+    <div class="backgroundPhotoCover"></div>
+</div>
+<h2 class="one-line v-gap">
+    <span>HELIX&nbsp;&nbsp;TRAGUS&nbsp;&nbsp;LOBE&nbsp;&nbsp;FLAT&nbsp;&nbsp;CONCH&nbsp;&nbsp;ROOK&nbsp;&nbsp;DAITH</span>
+</h2>
+<div class="container">
+    <div class="row center-align">
+        <div class="col s12">
+            <div class="centered-window-text">
+                <p class="v-gap">
+                    Experience luxury piercing at House of Gaia, St. Albert and Edmonton’s premier studio for expert ear and nose piercings. We offer a personalized, high-end experience in a serene, modern setting, focused on safety, precision, and self-expression. From custom ear styling to flawless placements, our skilled piercer ensures each piece reflects your unique style.
+                </p>
+            </div>
         </div>
-        <div class="row">
-            <p class="col s12 m6 offset-m3 center-align v-gap">
-                Discover the art of piercing at House of Gaia, the premier luxury piercing studio serving St. Albert, Edmonton,
-                and surrounding areas.
-            </p>
-            <p class="col s12 m6 offset-m3 center-align v-gap">
-                We specialize in professional ear and nose piercings, offering a personalized and elevated experience in a
-                serene, modern environment. Our expert piercer is dedicated to quality, safety, and personal expression,
-                ensuring every client leaves with a piece that feels uniquely theirs.
-            </p>
-            <p class="col s12 m6 offset-m3 center-align v-gap">
-                From custom ear styling to precision placements, every service at House of Gaia is designed with your vision in
-                mind. Whether you're planning your first piercing or curating your perfect earscape, experience the finest in
-                luxury piercing at House of Gaia — where artistry, comfort, and excellence meet.
-            </p>
-        </div>
-        <div class="verticalBarContainer">
-            <div class="verticalBar"></div>
-        </div>
-        <div class="newsletterSection">
-            <div class="ml-embedded" data-form="UH9fj9"></div>
-            <div style="display: flex; justify-content: center; align-items: center">
-                <div class="preloader-wrapper active"
-                     id="loader"
-                     style="margin: 10px auto;
-                            display: none">
-                    <div class="spinner-layer spinner-blue-only">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
+    </div>
+</div>
+<div class="landingPageSecondPhoto"
+     id="landingPageSecondPhoto"
+     croppedUrl="{% static 'icons/houseOfGaia2.jpg' %}"
+     originalUrl="{% static 'icons/houseOfGaia2 cropped.jpg' %}">
+    <div class="backgroundPhotoCover"></div>
+</div>
+<div class='landingPageBlogPosts'>
+    <h2 class='landingPageBlogHeader'>THE PIERCING EDIT</h2>
+    <div class='blogPostContainer'>
+        {% for blog in blogs %}
+            <div class='landingPageBlogPost'>
+                <img class='landingPageBlogPostImage' src="{{ blog.image.url }}" />
+                <span class='landingPageBlogPostTitle two-line-text '>{{ blog.title }}</span>
+                <span class='landingPageBlogPostDate'>{{ blog.created_at }}</span>
+                <div class='landingPageBlogPostContent'>{{ blog.summary }}</div>
+                <a class="waves-effect waves-light btn landingPageBlogPostBtn"
+                   href="{% url 'blogDetail' slug=blog.slug %}">- READ MORE</a>
+            </div>
+        {% endfor %}
+    </div>
+    <a class="waves-effect waves-light btn landingPageViewAllBlogPostBtn"
+       href="{% url 'allBlogs' %}">View All</a>
+</div>
+<div class="newsletterSection">
+    <div class="ml-embedded" data-form="UH9fj9"></div>
+    <div style="display: flex; justify-content: center; align-items: center">
+        <div class="preloader-wrapper active"
+             id="loader"
+             style="margin: 10px auto;
+                    display: none">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="googleMap">
+    <div class='addressContainer'>
+        <h3>Our Studio</h3>
+        <p>
+            #140 150 Carleton Drive
+        </br>
+        St. Albert, AB T8N 6W2
+    </p>
+    <p>BY APPOINTMENTS ONLY</p>
+    <p>(780) 686-0125</p>
+    <a class="waves-effect waves-light btn landingPageBlogPostBtn"
+       target="_blank"
+       href="https://maps.app.goo.gl/pfBngQr6eQbzmwE18">Get Directions</a>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2364.8363697718933!2d-113.57693372291783!3d53.64988975196778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0252a7ce10515%3A0xae0ecf84c7768938!2sHouse%20of%20Gaia!5e0!3m2!1sen!2sca!4v1748839524860!5m2!1sen!2sca"
+        width="300"
+        height="500"
+        style="border:0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<script></script>
 {% endblock %}

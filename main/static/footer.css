@@ -1,10 +1,29 @@
 .page-footer {
-	background-color: #8b7968 !important;
-	margin-top: 10vh;
+	background-color: #ede5df !important;
+}
+
+.centered-footer {
+	min-height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .footer-row {
 	width: 100%;
 	display: flex !important;
 	justify-content: center !important;
 	gap: 2.5rem;
+}
+
+.copyright-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+.footer-copyright {
+	background-color: #ede5df !important;
+	height: 75px !important;
+	border-top: 1px solid #817d7a !important;
+	opacity: 100% !important;
 }

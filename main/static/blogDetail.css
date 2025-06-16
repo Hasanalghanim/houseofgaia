@@ -1,0 +1,86 @@
+.blogDetailRowSpacer {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.blogHeroImage {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+/* Remove fixed size for images */
+.blogHeroImage img {
+	width: 100%;
+	height: auto;
+}
+
+/* Title Section */
+.blogDetailTitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+.blogDetailTitle h1 {
+	font-size: 32px;
+}
+
+.blogDetailTitle h2 {
+	font-size: 18px;
+	opacity: 80%;
+}
+
+.blogDetailDivider {
+	width: 25%;
+	height: 1px;
+	border-top: 1px solid #817d7a !important;
+}
+
+/* Hide both hero images by default */
+.hero-image {
+	display: none;
+}
+
+/* For large screens (Desktop) - Show Large Hero Image */
+@media (min-width: 1024px) {
+	.large-hero {
+		display: block;
+	}
+	.blogDetailTitle h1 {
+		width: 50%;
+	}
+}
+
+/* For tablet screens (iPad) */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.small-hero {
+		display: none; /* Hide small hero image on tablets */
+	}
+
+	.large-hero {
+		display: block; /* Show large hero image on tablets */
+	}
+
+	.blogDetailTitle h1 {
+		width: 60%;
+	}
+}
+
+/* For mobile screens (smaller than tablet size) */
+@media (max-width: 767px) {
+	.small-hero {
+		display: block; /* Show small hero image on mobile */
+	}
+
+	.large-hero {
+		display: none; /* Hide large hero image on mobile */
+	}
+
+	.blogDetailTitle h1 {
+		width: 80%;
+	}
+}

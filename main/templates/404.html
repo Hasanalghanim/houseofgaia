@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found | House of Gaia{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class='v-gap'>404</h1>
+        <h2>Sorry, the page you're looking for doesn't exist.</h2>
+        <p class='v-gap'>It might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="{% url 'redirect_to_home' %}"
+           class="waves-effect waves-light btn landingPageViewAllBlogPostBtn">Go to Homepage</a>
+    </div>
+{% endblock %}

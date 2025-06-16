@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    The Piercing Edit | Luxury Piercings and Curated Jewelry |
+    House of Gaia
+{% endblock %}
+{% block description %}The Piercing Edit{% endblock %}
+{% block og_title %}
+    The Piercing
+    Edit |Luxury Piercings and Curated Jewelry | House of Gaia
+{% endblock %}
+{% block og_description %}
+    The Piercing Edit
+    |Luxury Piercings and Curated Jewelry | House of Gaia
+{% endblock %}
+{% block content %}
+    <div class="allBlogsTitle v-gap"></div>
+    <div class="container allBlogsRowSpacer">
+        <div class="titleRow">
+            <h1>The Piercing Edit</h1>
+            {% comment %}
+		<div class="blogFilters"></div>
+            {% endcomment %}
+        </div>
+        <div class="allBlogsContainer">
+            {% for blog in blogs %}
+                <div class="allBlogsBlogPost">
+                    {% comment %}
+			<div class="allBlogsPostImage"></div>
+                    {% endcomment %}
+                    <img class="allBlogsPostImage" src="{{ blog.image.url }}" />
+                    <span class="landingPageBlogPostTitle two-line-text">{{ blog.title }}</span>
+                    <span class="landingPageBlogPostDate">{{ blog.created_at }}</span>
+                    <div class="landingPageBlogPostContent">{{ blog.summary }}</div>
+                    <a class="waves-effect waves-light btn landingPageBlogPostBtn"
+                       href="{% url 'blogDetail' slug=blog.slug %}">- READ MORE</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

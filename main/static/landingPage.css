@@ -13,7 +13,7 @@ body {
 	height: 100%;
 	font-family: 'Gilmer Regular', sans-serif !important;
 	font-weight: 400;
-	background: #faf3eb;
+	background: #ede5df;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -21,6 +21,7 @@ body {
 	min-width: 100%;
 	max-width: 100%;
 }
+
 .card,
 .navbar,
 .sidenav,
@@ -85,10 +86,6 @@ body {
 	opacity: 1;
 	visibility: visible; /* Make the content visible */
 }
-.mainHeader {
-	font-size: 30px;
-	font-style: italic;
-}
 
 .material-icons {
 	font-family: 'Material Icons' !important;
@@ -103,8 +100,9 @@ body {
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 }
+
 .navbar {
-	background-color: #faf3eb !important;
+	background-color: #ede5df !important;
 	transition: height 1s ease-in-out !important;
 	height: 64px;
 	overflow: hidden;
@@ -179,6 +177,8 @@ body {
 }
 
 .landingPageBackgroundPhoto {
+	display: flex;
+	flex-direction: column;
 	background-size: cover;
 	background-color: white;
 	background-position: center;
@@ -186,6 +186,166 @@ body {
 	min-height: 31.75rem;
 }
 
+.landingPageSecondPhoto {
+	display: flex;
+	flex-direction: column;
+	background-size: cover;
+	background-color: white;
+	background-position: center;
+	width: 100%;
+	min-height: 31.75rem;
+}
+
+.landingPageMainQuote {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.landingPageMainQuote h1 {
+	font-family: 'the-seasons', sans-serif !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	font-size: 32px;
+	color: white;
+	text-align: center;
+	z-index: 996;
+	line-height: 40px;
+}
+.backgroundPhotoCover {
+	min-width: 100%;
+	height: 31.75rem;
+	background-color: #222222;
+	position: absolute;
+	opacity: 45%;
+}
+
+.mainHeader {
+	font-size: 30px;
+	font-style: italic;
+}
+.bookNowBtn {
+	width: 200px !important;
+	border-radius: 500px !important;
+	background-color: #ede5df !important;
+	color: black;
+}
+
+.bookNowBtn:hover {
+	background-color: #8b7968 !important;
+}
+
+.one-line {
+	display: flex;
+	justify-content: space-between; /* Spread the items across the full width */
+	width: 100%;
+	font-size: 22px;
+	font-family: sans-serif;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0 1rem;
+}
+
+.one-line span {
+	font-family: 'the-seasons', sans-serif !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	display: inline-block;
+	width: 100%;
+	text-align: justify;
+	text-align-last: justify;
+	opacity: 40%;
+	font-size: 14px;
+}
+
+.landingPageBlogPosts {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #f4efec !important;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.landingPageBlogHeader {
+	font-size: 22px;
+	margin-bottom: 75px;
+}
+
+.blogPostContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+.landingPageBlogPost {
+	display: flex;
+
+	justify-content: space-between;
+	flex-direction: column;
+	width: 300px;
+	gap: 15px;
+}
+
+.landingPageBlogPostImage {
+	height: 200px;
+	width: 100%;
+	background-color: black;
+}
+.landingPageBlogPostTitle {
+	font-size: 18px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-height: 2.4em;
+	line-height: 1.2em;
+}
+.landingPageBlogPostDate {
+	font-size: 12px;
+	display: flex;
+	width: 100%;
+	opacity: 75%;
+}
+
+.landingPageBlogPostContent {
+	font-size: 14px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-height: 3.6em;
+	line-height: 1.2em;
+}
+.landingPageBlogPostBtn {
+	background-color: transparent;
+	color: black;
+	font-size: 12px;
+	margin-bottom: 50px;
+	text-align: start;
+	padding-left: 10px;
+}
+
+.landingPageBlogPostBtn:hover {
+	background-color: #8b7968;
+}
+
+.landingPageViewAllBlogPostBtn {
+	background-color: black;
+	color: white;
+	border-radius: 600px;
+	font-size: 12px;
+	width: 200px;
+	margin-bottom: 50px;
+}
+
+.landingPageViewAllBlogPostBtn:hover {
+	background-color: #8b7968;
+}
 .verticalBar {
 	height: 4rem;
 	width: 0.1rem;
@@ -195,19 +355,46 @@ body {
 }
 
 .icons {
-	display: flex;
-	width: 50%;
-	justify-content: space-around;
-	align-items: center;
+	display: none;
 }
 
 .icons img {
-	height: 33.91px;
-	width: 33.91px;
+	height: 20.91px;
+	width: 20.91px;
 }
 
 .v-gap {
 	margin-bottom: 50px;
+}
+
+.newsletterSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.addressContainer h3 {
+	font-size: 30px;
+}
+
+.addressContainer p {
+	font-size: 14px;
+}
+.addressContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+.googleMap {
+	background-color: #f4efec !important;
+}
+.googleMap iframe {
+	width: 100%;
 }
 
 /* IPAD */
@@ -221,13 +408,71 @@ body {
 	.brand-logo img {
 		height: 39px;
 	}
+
+	.one-line span {
+		font-size: 22px;
+	}
 	.brand-logo img.expanded {
 		height: 60px;
+	}
+	.googleMap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.addressContainer {
+		width: 50%;
+		text-align: left;
+	}
+
+	.addressContainer h3 {
+		font-size: 30px;
+	}
+
+	.addressContainer p {
+		font-size: 14px;
+	}
+
+	.googleMap iframe {
+		width: 50%;
+		min-height: 350px;
+	}
+
+	.centered-window-text {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	.icons {
+		display: none;
+	}
+
+	.blogPostContainer {
+		display: flex;
+		flex-direction: row;
 	}
 }
 
 /* WINDOPWES */
 @media (min-width: 1024px) {
+	.socialMediaIcons {
+		position: fixed;
+		top: 0;
+		left: 25px;
+		height: 100vh;
+		width: 1vw;
+	}
+	.icons {
+		display: flex;
+		width: 95%;
+		height: 60%;
+		align-items: start;
+		justify-content: center;
+		gap: 1rem;
+		flex-direction: column;
+		margin: auto;
+	}
+
 	.brand-logo {
 		height: 100% !important;
 		display: flex !important;
@@ -242,8 +487,36 @@ body {
 		height: 70px;
 	}
 
+	.one-line span {
+		font-size: 28px;
+	}
 	.booking-btn {
 		border: solid black 0.5px !important;
 		border-radius: 25px !important;
+	}
+
+	.googleMap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.addressContainer {
+		width: 50%;
+		text-align: left;
+	}
+
+	.googleMap iframe {
+		width: 50%;
+		min-height: 350px;
+	}
+
+	.centered-window-text {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.blogPostContainer {
+		display: flex;
+		flex-direction: row;
 	}
 }

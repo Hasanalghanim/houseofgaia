@@ -6,7 +6,7 @@
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>
-                {% block title %}House of Gaia{% endblock %}
+                {% block title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}
             </title>
             <meta name="description"
                   content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}" />
@@ -14,11 +14,14 @@
                   content="House of Gaia, luxury, natural beauty, piercings" />
             <meta name="author" content="House of Gaia" />
             <!-- Open for social sharing info-->
-            <meta property="og:title" content="House of Gaia" />
+            <meta property="og:title"
+                  content="{% block og_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
             <meta property="og:description"
-                  content="Luxury piercings and jewelry studio." />
+                  content="{% block og_description %}Luxury piercings and jewelry studio.{% endblock %}" />
             <meta property="og:image"
-                  content="{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}" />
+                  content="{% block og_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
+            <meta name="twitter:image"
+                  content="{% block twitter_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
             <meta property="og:url" content="https://houseofgaia.ca" />
             <meta name="twitter:card" content="summary_large_image" />
         {% endblock %}
@@ -34,6 +37,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://db.onlinewebfonts.com/c/65c79a29b6ed725883911cb318380955?family=Gilmer+Regular"
               rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.typekit.net/vuj2zrw.css">
         <!--  Jquery  -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="icon" type="image/x-icon" href="{% static 'icons/icon.ico' %}" />
@@ -45,6 +49,31 @@
               href="{% static 'landingPage.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'aboutUs.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'allBlogs.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'blogDetail.css' %}" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'richEditorStyles.css' %}" />
+        <script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "House of Gaia",
+				"image": "https://houseofgaia.ca/static/icons/main.svg",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "150 Carleton Dr",
+					"addressLocality": "St. Albert",
+					"addressRegion": "AB",
+					"postalCode": "T8N 6W2",
+					"addressCountry": "CA"
+				},
+				"url": "https://houseofgaia.ca",
+				"telephone": "+1-780-686-0125",
+				"priceRange": "$$",
+				"openingHours": "Tu-Sa 11:00-18:00"
+			}
+        </script>
     </head>
     <body>
         <div id="splashScreen">
@@ -70,6 +99,9 @@
                                 <li>
                                     <a href="{% url 'about' %}">ABOUT</a>
                                 </li>
+                                <li>
+                                    <a href="{% url 'allBlogs' %}">BLOGS</a>
+                                </li>
                             </ul>
                             <!-- Centered Logo -->
                             <a href="{% url 'redirect_to_home' %}" class="brand-logo center">
@@ -81,7 +113,7 @@
                             <!-- Right-Aligned Button (Book Appointment) -->
                             <ul class="right hide-on-med-and-down">
                                 <li>
-                                    <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                                    {% comment %} <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a> {% endcomment %}
                                 </li>
                             </ul>
                         </div>
@@ -99,10 +131,13 @@
                             <li>
                                 <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
                             </li>
+                            <li>
+                                <a href="{% url 'allBlogs' %}" class="sidebar-links">BLOGS</a>
+                            </li>
                         </ul>
                         <ul>
                             <li>
-                                <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a>
+                                {% comment %} <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a> {% endcomment %}
                             </li>
                         </ul>
                     </div>
@@ -110,48 +145,45 @@
             </header>
             <main>
                 {% block content %}{% endblock %}
+                <div class="container socialMediaIcons">
+                    <div class="icons">
+                        <a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr"
+                           target="_blank">
+                            <div>
+                                <img src="{% static 'icons/instagram black.png' %}" alt="Instagram Icon" />
+                            </div>
+                        </a>
+                        <a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
+                            <div>
+                                <img src="{% static 'icons/tik-tok black.png' %}" alt="TikTok Icon" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </main>
             <footer class="page-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 footer-row">
-                            <div class="icons">
-                                <div>
-                                    <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" />
-                                </div>
-                                <a href="https://www.instagram.com/houseofgaia_co?igsh=MWt0ZjVlYjc0Y3BpYg%3D%3D&utm_source=qr"
-                                   target="_blank">
-                                    <div>
-                                        <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" />
-                                    </div>
-                                </a>
-                                <a href="https://www.tiktok.com/@houseofgaiaco" target="_blank">
-                                    <div>
-                                        <img src="{% static 'icons/tiktok.svg' %}" alt="TikTok Icon" />
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container centered-footer">
                     <div class="row">
                         <div class="col s12 footer-row">
                             <ul class="footer-row">
                                 <li>
-                                    <a class="grey-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
+                                    <a class="black-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
                                 </li>
                                 <li>
-                                    <a class="grey-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
+                                    <a class="black-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
                                 </li>
                                 <li>
-                                    <a class="grey-text text-lighten-3" href="#!">BOOK ONLINE</a>
+                                    <a class="black-text text-lighten-3" href="#!">BOOK ONLINE</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="footer-copyright">
-                    <div class="container">
-                        &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
+                    <div class="container copyright-text ">
+                        <div>
+                            &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
+                        </div>
                     </div>
                 </div>
             </footer>

@@ -48,9 +48,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		console.log('Background image updated to:', wallPaper.style.backgroundImage);
 	}
 
+	function updateSecondImages() {
+		const wallPaper = document.getElementById('landingPageSecondPhoto');
+		if (!wallPaper) return;
+
+		const originalUrl = wallPaper.getAttribute('originalUrl');
+		const croppedUrl = wallPaper.getAttribute('croppedUrl');
+
+		if (!originalUrl || !croppedUrl) return;
+
+		wallPaper.style.backgroundImage = window.innerWidth <= 991 ? `url('${croppedUrl}')` : `url('${originalUrl}')`;
+
+		console.log('Background image updated to:', wallPaper.style.backgroundImage);
+	}
+
 	// Initial call + on resize
 	updateBackgroundImages();
-	window.addEventListener('resize', updateBackgroundImages);
+	updateSecondImages();
+	window.addEventListener('resize', updateBackgroundImages, updateSecondImages);
 
 	// Footer year update
 	const yearElement = document.getElementById('footer-year');
