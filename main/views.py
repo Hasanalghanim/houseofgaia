@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
-from .models import BlogPost,LandingPage
+from .models import BlogPost,LandingPage,AllBlogsPage,AboutPage
 
 
 from hitcount.views import HitCountMixin
@@ -22,12 +22,23 @@ def landingPage(request):
 
 # Create your views here.
 def about(request):
-    return render(request, "about.html",)
+    aboutHits = AboutPage.objects.get(name="aboutPage")
+    hit_count = HitCount.objects.get_for_object(aboutHits)
+    HitCountMixin.hit_count(request, hit_count)
+
+    return render(request, "about.html", {'hit_count':hit_count.hits})
 
 
 def allBlogs(request):
     posts = BlogPost.objects.order_by('-id') 
-    return render(request, "allBlogs.html", {'blogs': posts})
+
+
+    blogHits = AllBlogsPage.objects.get(name="AllBlogsPage")
+    
+    hit_count = HitCount.objects.get_for_object(blogHits)
+    HitCountMixin.hit_count(request, hit_count)
+    
+    return render(request, "allBlogs.html", {'blogs': posts,'hit_count':hit_count.hits})
 
 
 def blogDetail(request,slug):

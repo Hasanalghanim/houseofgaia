@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import BlogPost,LandingPage
+from .models import BlogPost,LandingPage,AboutPage,AllBlogsPage
 
 
 @admin.register(BlogPost)
@@ -12,3 +12,5 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(LandingPage)
+admin.site.register(AboutPage)
+admin.site.register(AllBlogsPage)

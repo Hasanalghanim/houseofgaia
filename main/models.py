@@ -16,7 +16,13 @@ class LandingPage(models.Model):
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 
+class AboutPage(models.Model):
+    name = models.CharField(max_length=100, default="aboutPage")
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
+class AllBlogsPage(models.Model):
+    name = models.CharField(max_length=100, default="AllBlogsPage")
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 class BlogPost(models.Model): 
     title = models.CharField(max_length=75)
