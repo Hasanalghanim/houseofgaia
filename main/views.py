@@ -12,7 +12,7 @@ from hitcount.views import HitCountMixin
 def landingPage(request):
     posts = BlogPost.objects.order_by('-id')[:3] 
 
-    landing = LandingPage.objects.get(name="landing")
+    landing = LandingPage.objects.get_or_create(name="landing")
     hit_count = HitCount.objects.get_for_object(landing)
     HitCountMixin.hit_count(request, hit_count)
 
@@ -22,7 +22,7 @@ def landingPage(request):
 
 # Create your views here.
 def about(request):
-    aboutHits = AboutPage.objects.get(name="aboutPage")
+    aboutHits = AboutPage.objects.get_or_create(name="aboutPage")
     hit_count = HitCount.objects.get_for_object(aboutHits)
     HitCountMixin.hit_count(request, hit_count)
 
@@ -33,7 +33,7 @@ def allBlogs(request):
     posts = BlogPost.objects.order_by('-id') 
 
 
-    blogHits = AllBlogsPage.objects.get(name="AllBlogsPage")
+    blogHits = AllBlogsPage.objects.get_or_create(name="AllBlogsPage")
     
     hit_count = HitCount.objects.get_for_object(blogHits)
     HitCountMixin.hit_count(request, hit_count)
@@ -44,7 +44,7 @@ def allBlogs(request):
 def blogDetail(request,slug):
     blog = get_object_or_404(BlogPost, slug=slug)
 
-    hit_count = HitCount.objects.get_for_object(blog)
+    hit_count = HitCount.objects.get_or_create(blog)
     hit_count_response = HitCountMixin.hit_count(request, hit_count)
 
     return render(request, "blogDetail.html", {"blog": blog, 'hit_count':hit_count.hits})
