@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'ckeditor',
     'ckeditor_uploader',
-    'imagekit'
+    'imagekit',
+    'hitcount'
 ]
 
 MIDDLEWARE = [

@@ -182,7 +182,9 @@
                 <div class="footer-copyright">
                     <div class="container copyright-text ">
                         <div>
-                            &copy; <span id="footer-year"></span> <span>All Rights reserved.</span>
+                            &copy; <span id="footer-year"></span> <span>All Rights reserved. 				{% if request.user.is_authenticated and request.user.is_superuser %}
+				<p><strong>Views:</strong> {{ hit_count }}</p>
+				{% endif %}</h2></span>
                         </div>
                     </div>
                 </div>
