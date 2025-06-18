@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5^_zrlc+d%3)#8lnb_f)kduzl(ka&n^8(v@%6!73^e9n!!ymku'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['houseofgaia.ca','www.houseofgaia.ca','127.0.0.1']
 
@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'houseofgaia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'NAME': '/home/houseofgaia/db.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': '/home/houseofgaia/db.sqlite3',
     }
 }
 
