@@ -7,6 +7,7 @@ from .models import BlogPost,LandingPage,AllBlogsPage,AboutPage
 from hitcount.views import HitCountMixin
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
+from django.contrib.contenttypes.models import ContentType
 
 
 def landingPage(request):
@@ -44,7 +45,11 @@ def allBlogs(request):
 def blogDetail(request,slug):
     blog = get_object_or_404(BlogPost, slug=slug)
 
-    hit_count,created = HitCount.objects.get_or_create(blog)
+    content_type = ContentType.objects.get_for_model(blog)
+    hit_count, created = HitCount.objects.get_or_create(
+        content_type=content_type,
+        object_pk=blog.pk,
+    )
     hit_count_response = HitCountMixin.hit_count(request, hit_count)
 
     return render(request, "blogDetail.html", {"blog": blog, 'hit_count':hit_count.hits})
