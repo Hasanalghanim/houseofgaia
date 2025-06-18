@@ -13,15 +13,18 @@ from hitcount.models import HitCount
 
 class LandingPage(models.Model):
     name = models.CharField(max_length=100, default="landing")
+    test = models.CharField(max_length=100, default="landing")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 
 class AboutPage(models.Model):
     name = models.CharField(max_length=100, default="aboutPage")
+    test = models.CharField(max_length=100, default="landing")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 class AllBlogsPage(models.Model):
     name = models.CharField(max_length=100, default="AllBlogsPage")
+    test = models.CharField(max_length=100, default="landing")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 class BlogPost(models.Model): 
@@ -35,6 +38,7 @@ class BlogPost(models.Model):
 
 
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
+    test = models.CharField(max_length=100, default="landing")
     image_hero_large = ImageSpecField(
         source='image',
         processors=[ResizeToFill(1200, 500)],  
