@@ -465,7 +465,7 @@ body {
 	.icons {
 		display: flex;
 		width: 95%;
-		height: 60%;
+		height: 100%;
 		align-items: start;
 		justify-content: center;
 		gap: 1rem;
