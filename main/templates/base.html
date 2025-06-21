@@ -2,34 +2,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       
-            {% block meta %}
-       
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block meta %}
             <title>
                 {% block title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}
             </title>
-            <meta name="description" content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}" />
-
-           <meta name="keywords" content="House of Gaia, luxury, natural beauty, piercings" />
+            <meta name="description"
+                  content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}" />
+            <meta name="keywords"
+                  content="House of Gaia, luxury, natural beauty, piercings" />
             <meta name="author" content="House of Gaia" />
             <!-- Open for social sharing info-->
-            <meta property="og:title" content="{% block og_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
-            <meta property="og:description" content="{% block og_description %}Luxury piercings and jewelry studio.{% endblock %}" />
-            <meta property="og:image" content="{% block og_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
+            <meta property="og:title"
+                  content="{% block og_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
+            <meta property="og:description"
+                  content="{% block og_description %}Luxury piercings and jewelry studio.{% endblock %}" />
+            <meta property="og:image"
+                  content="{% block og_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
             <meta property="og:url" content="https://houseofgaia.ca" />
             <meta property="og:type" content="website" />
-
-
-
             <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="{% block twitter_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
-        <meta name="twitter:description" content="{% block twitter_description %}Luxury piercings and jewelry studio.{% endblock %}" />
-        <meta name="twitter:image" content="{% block twitter_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title"
+                  content="{% block twitter_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
+            <meta name="twitter:description"
+                  content="{% block twitter_description %}Luxury piercings and jewelry studio.{% endblock %}" />
+            <meta name="twitter:image"
+                  content="{% block twitter_image %}{% static 'icons/657f253e480cf87ce3c59c86_Artboard 1-p-500.png' %}{% endblock %}" />
         {% endblock %}
-  
         <!--  Material Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet" />
@@ -183,19 +184,24 @@
                 <div class="footer-copyright">
                     <div class="container copyright-text ">
                         <div>
-                            &copy; <span id="footer-year"></span> <span>All Rights reserved. 				{% if request.user.is_authenticated and request.user.is_superuser %}
-				<p><strong>Views:</strong> {{ hit_count }}</p>
-				{% endif %}</h2></span>
-                        </div>
-                    </div>
+                            &copy; <span id="footer-year"></span> <span>All Rights reserved.
+                            {% if request.user.is_authenticated and request.user.is_superuser %}
+                                <p>
+                                    <strong>Views:</strong> {{ hit_count }}
+                                </p>
+                            {% endif %}
+                        </h2>
+                    </span>
                 </div>
-            </footer>
+            </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- MailerLite Universal -->
-        <script type="text/javascript" src="{% static 'functions.js'  %}" defer></script>
-        <script>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- MailerLite Universal -->
+<script type="text/javascript" src="{% static 'functions.js'  %}" defer></script>
+<script>
 			(function (w, d, e, u, f, l, n) {
 				(w[f] =
 					w[f] ||
@@ -213,7 +219,7 @@
 				var elems = document.querySelectorAll('.sidenav');
 				M.Sidenav.init(elems);
 			});
-        </script>
-        <!-- End MailerLite Universal -->
-    </body>
+</script>
+<!-- End MailerLite Universal -->
+</body>
 </html>

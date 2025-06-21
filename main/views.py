@@ -1,13 +1,10 @@
+from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-
-from .models import BlogPost,LandingPage,AllBlogsPage,AboutPage
-
-
-from hitcount.views import HitCountMixin
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
-from django.contrib.contenttypes.models import ContentType
+
+from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage
 
 
 def landingPage(request):

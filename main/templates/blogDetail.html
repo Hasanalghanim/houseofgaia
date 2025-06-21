@@ -1,53 +1,51 @@
 {% extends "base.html" %}
 {% load static %}
 {% load hitcount_tags %}
-
 {% block title %}
     {{ blog.title }} | The Piercing Edit | Luxury Piercings and Curated Jewelry | House of Gaia
 {% endblock %}
-
-{% block description %}
-    {{ blog.summary|default:blog.body|truncatechars:160 }}
-{% endblock %}
-
+{% block description %}{{ blog.summary|default:blog.body|truncatechars:160 }}{% endblock %}
 {% block og_title %}
     {{ blog.title }} | The Piercing Edit | Luxury Piercings and Curated Jewelry | House of Gaia
 {% endblock %}
-
-{% block og_description %}
-    {{ blog.summary|default:blog.body|truncatechars:160 }}
-{% endblock %}
-
+{% block og_description %}{{ blog.summary|default:blog.body|truncatechars:160 }}{% endblock %}
 {% block content %}
-{% if blog %}
-<div class="blogDetailRowSpacer">
-    <div class="blogHeroImage">
-        <!-- Large Hero Image for Desktop -->
-        {% if blog.image_hero_large %}
-            <img src="{{ blog.image_hero_large.url }}" alt="{{ blog.title }}" class="hero-image large-hero" loading="lazy" />
-        {% endif %}
-        <!-- Small Hero Image for Mobile/Tablets -->
-        {% if blog.image_hero_small %}
-            <img src="{{ blog.image_hero_small.url }}" alt="{{ blog.title }}" class="hero-image small-hero" loading="lazy" />
-        {% endif %}
-        
-    </div>
-    <div class="container">
-        <div class="blogDetailTitle">
-            <h1>{{ blog.title }}</h1>
-            <div class="blogDetailDivider"></div>
-            <h2>{{ blog.created_at|date:"F j, Y" }} | {{ blog.author }}</h2>
-            {% if request.user.is_authenticated and request.user.is_superuser %}
-                {% get_hit_count for blog as hitcount %}
-                <p><strong>Views:</strong> {{ hitcount }}</p>
-            {% endif %}
+    {% if blog %}
+        <div class="blogDetailRowSpacer">
+            <div class="blogHeroImage">
+                <!-- Large Hero Image for Desktop -->
+                {% if blog.image_hero_large %}
+                    <img src="{{ blog.image_hero_large.url }}"
+                         alt="{{ blog.title }}"
+                         class="hero-image large-hero"
+                         loading="lazy" />
+                {% endif %}
+                <!-- Small Hero Image for Mobile/Tablets -->
+                {% if blog.image_hero_small %}
+                    <img src="{{ blog.image_hero_small.url }}"
+                         alt="{{ blog.title }}"
+                         class="hero-image small-hero"
+                         loading="lazy" />
+                {% endif %}
+            </div>
+            <div class="container">
+                <div class="blogDetailTitle">
+                    <h1>{{ blog.title }}</h1>
+                    <div class="blogDetailDivider"></div>
+                    <h2>{{ blog.created_at|date:"F j, Y" }} | {{ blog.author }}</h2>
+                    {% if request.user.is_authenticated and request.user.is_superuser %}
+                        {% get_hit_count for blog as hitcount %}
+                        <p>
+                            <strong>Views:</strong> {{ hitcount }}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="rich-text-content">{{ blog.body|safe }}</div>
+            </div>
         </div>
-        <div class="rich-text-content">{{ blog.body|safe }}</div>
-    </div>
-</div>
-{% else %}
-    <div class="container">
-        <p>Sorry, this blog post could not be found.</p>
-    </div>
-{% endif %}
+    {% else %}
+        <div class="container">
+            <p>Sorry, this blog post could not be found.</p>
+        </div>
+    {% endif %}
 {% endblock %}
