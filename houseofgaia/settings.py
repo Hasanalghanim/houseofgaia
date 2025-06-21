@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 300,
+        'height': 500,
         'width': 'auto',
         'contentsCss': ['/static/css/ckeditor_materialize.css'],  # Custom styles to match Materialize
     },
