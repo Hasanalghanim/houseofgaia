@@ -1,11 +1,13 @@
 from django.contrib import admin
 
-from .models import BlogPost,LandingPage,AboutPage,AllBlogsPage
+from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage, Service
 
 
 @admin.register(BlogPost)
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ("title", "created_at")
+
+    
 
 
 
@@ -14,3 +16,4 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(LandingPage)
 admin.site.register(AboutPage)
 admin.site.register(AllBlogsPage)
+admin.site.register(Service)

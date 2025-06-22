@@ -53,6 +53,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'allBlogs.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'blogDetail.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'services.css' %}" />
         <link rel="stylesheet"
               type="text/css"
               href="{% static 'richEditorStyles.css' %}" />
@@ -98,6 +99,9 @@
                                 <li>
                                     <a href="{% url 'redirect_to_home' %}">HOME</a>
                                 </li>
+                                {% comment %} <li>
+                                    <a href="{% url 'services' %}">SERVICES</a>
+                                </li> {% endcomment %}
                                 <li>
                                     <a href="{% url 'about' %}">ABOUT</a>
                                 </li>
@@ -112,7 +116,6 @@
                                      alt="Logo"
                                      class="brandLogo" />
                             </a>
-                            <!-- Right-Aligned Button (Book Appointment) -->
                             <ul class="right hide-on-med-and-down">
                                 <li>
                                     {% comment %} <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a> {% endcomment %}
@@ -130,6 +133,9 @@
                             <li>
                                 <a href="{% url 'redirect_to_home' %}" class="sidebar-links">HOME</a>
                             </li>
+                            {% comment %} <li>
+                                <a href="{% url 'services' %}">SERVICES</a>
+                            </li> {% endcomment %}
                             <li>
                                 <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
                             </li>

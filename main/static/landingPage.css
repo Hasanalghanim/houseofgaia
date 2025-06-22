@@ -289,6 +289,9 @@ body {
 	gap: 15px;
 }
 
+.landingPageBlogPost {
+}
+
 .landingPageBlogPostImage {
 	height: 200px;
 	width: 100%;
@@ -303,7 +306,12 @@ body {
 	text-overflow: ellipsis;
 	min-height: 2.4em;
 	line-height: 1.2em;
+	color: black;
 }
+.landingPageBlogPostTitle:hover {
+	color: #8b7968 !important;
+}
+
 .landingPageBlogPostDate {
 	font-size: 12px;
 	display: flex;
@@ -377,7 +385,7 @@ body {
 }
 
 .addressContainer h3 {
-	font-size: 30px;
+	font-size: 22px;
 }
 
 .addressContainer p {

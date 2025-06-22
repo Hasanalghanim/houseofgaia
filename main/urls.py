@@ -16,6 +16,7 @@ urlpatterns = [
     path('', views.landingPage, name='landingPage'),
     path('redirect/', RedirectView.as_view(url='/', permanent=False), name='redirect_to_home'),
     path('about', views.about, name='about'),
+    # path('services', views.services, name='services'),
     path('the-piercing-edit/', views.allBlogs, name='allBlogs'),
     path('the-piercing-edit/<slug:slug>/',views.blogDetail, name='blogDetail'),
 

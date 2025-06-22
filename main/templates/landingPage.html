@@ -48,8 +48,13 @@
     <div class='blogPostContainer'>
         {% for blog in blogs %}
             <div class='landingPageBlogPost'>
-                <img class='landingPageBlogPostImage' src="{{ blog.image.url }}" />
-                <span class='landingPageBlogPostTitle two-line-text '>{{ blog.title }}</span>
+                <a class="" href="{% url 'blogDetail' slug=blog.slug %}">
+                    <img class='landingPageBlogPostImage' src="{{ blog.image.url }}" />
+                </a>
+                <a class="landingPageBlogPostTitle"
+                   href="{% url 'blogDetail' slug=blog.slug %}">
+                    <span class='landingPageBlogPostTitle two-line-text '>{{ blog.title }}</span>
+                </a>
                 <span class='landingPageBlogPostDate'>{{ blog.created_at }}</span>
                 <div class='landingPageBlogPostContent'>{{ blog.summary }}</div>
                 <a class="waves-effect waves-light btn landingPageBlogPostBtn"
@@ -80,7 +85,7 @@
 </div>
 <div class="googleMap">
     <div class='addressContainer'>
-        <h3>Our Studio</h3>
+        <h3>OUR STUDIO</h3>
         <p>
             #140 150 Carleton Drive
         </br>
