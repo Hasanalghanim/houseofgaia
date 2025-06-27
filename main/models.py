@@ -26,43 +26,7 @@ class AllBlogsPage(models.Model):
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
 
-class AllServicesPage(models.Model):
-    name = models.CharField(max_length=100, default="AllServicesPage")
-    test = models.CharField(max_length=100, default="AllServicesPage")
-    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
-
-class Service(models.Model): 
-    title = models.CharField(max_length=75)
-    created_at = models.DateField(auto_now_add=True)
-    image = models.ImageField(upload_to='images/')
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
-    order = models.IntegerField()
-    image_hero_large = ImageSpecField(
-        source='image',
-        processors=[ResizeToFill(1200, 500)],  
-        format='JPEG',
-        options={'quality': 90}
-    )
-    
-    
-    image_hero_small = ImageSpecField(
-        source='image',
-        processors=[ResizeToFill(600, 300)],  
-        format='JPEG',
-        options={'quality': 80}
-    )
-    
-    image_thumbnail = ImageSpecField(
-        source='image',
-        processors=[ResizeToFill(150, 150)],  
-        format='JPEG',
-        options={'quality': 80}
-    )
-
-    def __str__(self):
-        return self.title
 
 class BlogPost(models.Model): 
     title = models.CharField(max_length=75)

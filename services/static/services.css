@@ -1,0 +1,184 @@
+.servicesTitle {
+	border-top: 1px solid #817d7a !important;
+	opacity: 40%;
+}
+.servicesRowSpacer {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.titleRow h1 {
+	font-style: italic;
+	font-size: 32px;
+	margin: 0;
+}
+.titleRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.serviceScroll{
+	position: relative;
+	margin: 2rem 1rem;
+	width: 100%;
+	margin: 0 auto;
+
+}
+.servicesContainer {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+	gap: 10px;
+	padding: 20px 0;
+	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
+}
+
+.servicesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.serviceCard {
+	flex: 0 0 auto;
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	scroll-snap-align: start;
+	position: relative;
+}
+.servicesPostImage{
+	cursor: pointer;
+	display: block;
+  	width: 100%;
+ 	height: auto;
+}
+.serviceImageLink{  
+	position: relative;
+  	display: inline-block;
+}
+
+.serviceImageCover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+text-align: center;
+	background-color: rgba(0, 0, 0, 0.4); 
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none; 
+}
+
+
+.serviceImageLink:hover .serviceImageCover {
+	opacity: 1;
+}
+
+
+
+.scrollBtn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 99999;
+	background-color: black; 
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	font-size: 1.5rem;
+	
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.scrollBtn.left {
+	left: -15px;
+}
+
+.scrollBtn.right {
+	right: -15px;
+}
+
+
+.serviceDetail h2{
+	font-size: 16px;
+	padding: 10px 0 0 0;
+	margin: 0;
+	text-align: center;
+	color: black;
+	cursor: pointer;
+}
+
+
+.scrollControls{
+	display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin: auto;
+}
+
+
+.carouselDots {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.carouselDots .dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 6px;
+	background-color: #ccc;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.carouselDots .dot.active {
+	background-color: #8b7968 ; 
+}
+
+#allJewelryItem{
+	display: flex;
+    gap: 10px;
+}
+
+
+
+#jewelryContainerTitle{
+	font-size: 24px;
+
+}
+
+.jewelryItem{
+	width:200px
+}
+
+
+/* IPAD */
+@media (min-width: 768px) and (max-width: 1024px) {
+		.serviceCard {
+		width: 150px;
+		
+	}
+
+}
+
+/* WINDOPWES */
+@media (min-width: 1024px) {
+	.serviceCard {
+		width: 200px;
+		
+	}
+}

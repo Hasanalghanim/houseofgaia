@@ -1,6 +1,6 @@
 
 from django.contrib.sitemaps.views import sitemap  # Import the correct sitemap view
-from django.urls import path
+from django.urls import path,include
 from django.views.generic import RedirectView
 
 from . import sitemap as custom_sitemap
@@ -16,7 +16,7 @@ urlpatterns = [
     path('', views.landingPage, name='landingPage'),
     path('redirect/', RedirectView.as_view(url='/', permanent=False), name='redirect_to_home'),
     path('about', views.about, name='about'),
-    # path('services', views.services, name='services'),
+    path('services', include('services.urls') ),
     path('the-piercing-edit/', views.allBlogs, name='allBlogs'),
     path('the-piercing-edit/<slug:slug>/',views.blogDetail, name='blogDetail'),
 

@@ -99,9 +99,9 @@
                                 <li>
                                     <a href="{% url 'redirect_to_home' %}">HOME</a>
                                 </li>
-                                {% comment %} <li>
-                                    <a href="{% url 'services' %}">SERVICES</a>
-                                </li> {% endcomment %}
+                               <li>
+                                    <a href="{% url 'allServices' %}">SERVICES</a>
+                                </li> 
                                 <li>
                                     <a href="{% url 'about' %}">ABOUT</a>
                                 </li>
@@ -133,9 +133,9 @@
                             <li>
                                 <a href="{% url 'redirect_to_home' %}" class="sidebar-links">HOME</a>
                             </li>
-                            {% comment %} <li>
-                                <a href="{% url 'services' %}">SERVICES</a>
-                            </li> {% endcomment %}
+                           <li>
+                                <a href="{% url 'allServices' %}">SERVICES</a>
+                            </li> 
                             <li>
                                 <a href="{% url 'about' %}" class="sidebar-links">ABOUT</a>
                             </li>
@@ -177,9 +177,12 @@
                                 <li>
                                     <a class="black-text text-lighten-3" href="{% url 'redirect_to_home' %}">HOME</a>
                                 </li>
+
+                                
                                 <li>
                                     <a class="black-text text-lighten-3" href="{% url 'about' %}">ABOUT</a>
                                 </li>
+
                                 <li>
                                     <a class="black-text text-lighten-3" href="#!">BOOK ONLINE</a>
                                 </li>
@@ -207,6 +210,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- MailerLite Universal -->
 <script type="text/javascript" src="{% static 'functions.js'  %}" defer></script>
+
+<script type="text/javascript" src="{% static 'services.js'  %}" defer></script>
 <script>
 			(function (w, d, e, u, f, l, n) {
 				(w[f] =

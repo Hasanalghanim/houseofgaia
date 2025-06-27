@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 
-from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage, Service
+from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage
 
 
 def landingPage(request):
@@ -27,18 +27,6 @@ def about(request):
     return render(request, "about.html", {'hit_count':hit_count.hits})
 
 
-
-
-
-# Create your views here.
-def services(request):
-    allServices = Service.objects.order_by('order') 
-
-
-
-
-
-    return render(request, "services.html", {'allServices':allServices})
 
 
 

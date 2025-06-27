@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Services | Luxury Piercings and Curated Jewelry | House of
+    Gaia
+{% endblock %}
+{% block description %}
+    Discover our premium piercing services at House of Gaia. From custom designs
+    to expert advice and aftercare, we provide the ultimate luxury experience for your jewelry and piercing needs.
+{% endblock %}
+{% block og_title %}Piercing Services | Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}
+{% block og_description %}
+    Explore our exclusive piercing services at House of Gaia, where we offer expert guidance,
+    luxury jewelry, and the finest care for every piercing experience.
+{% endblock %}
+{% block content %}
+    <div class="servicesTitle v-gap"></div>
+    <div class="container servicesRowSpacer">
+        <div class="titleRow">
+            <h1>OUR SERVICES</h1>
+        </div>
+        
+        <div class='serviceScroll'>
+           <a class="scrollBtn left" onclick="scrollServices('left', 3)">←</a>
+            <div class="servicesContainer">
+                {% for service in allServices %}
+                <div class="serviceCard">
+                    <a onclick="updateJewelryForPiercing(this)" data-service-title="{{ service.title }}" data-service-id="{{ service.id }}" class='serviceImageLink'>
+                        <div class='serviceImageCover'>{{ service.title }} </div>
+                        <img class="servicesPostImage" src="{{ service.image_hero_small.url }}"/> 
+                        
+                    </a>
+                    
+                    <div class="serviceDetail">
+                        <a onclick="updateJewelryForPiercing(this)" data-service-title="{{ service.title }}" data-service-id="{{ service.id }}" >
+                            <h2 class="serviceDetailTitle">{{ service.title }}</h2>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <a class="scrollBtn right" onclick="scrollServices('right', 3)">→</a>
+        </div>
+        <div class="carouselDots"></div>
+
+
+        <div class="jewelryContainer">
+            <h2 id='jewelryContainerTitle'> </h2>
+            <div id="allJewelryContainer" >
+
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
