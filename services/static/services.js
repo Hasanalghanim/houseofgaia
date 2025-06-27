@@ -110,7 +110,7 @@ fetch(`/services/detail/${serviceId}`)
         data.forEach(jewelry => {
             // Create a new div for each jewelry item (or use any other structure you need)
             const jewelryElement = document.createElement('div');
-            jewelryElement.classList.add('allJewelryItem');
+            jewelryElement.classList.add('jewelryItem');
             
             // Add jewelry details to the new div
             jewelryElement.innerHTML = `
