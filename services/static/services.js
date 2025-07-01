@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const cards = document.querySelectorAll('.serviceCard');
-	const cardsPerPage = 3;
+	const cardsPerPage = 2;
 	const total = Math.ceil(cards.length / cardsPerPage);
 
 	createCarouselDots(total);

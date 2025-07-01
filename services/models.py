@@ -37,7 +37,7 @@ class Service(models.Model):
     
     image_hero_small = ImageSpecField(
         source='image',
-        processors=[ResizeToFill(200, 280)],  
+        processors=[ResizeToFill(700, 900)],  
         format='PNG',
         options={'quality': 80}
     )
