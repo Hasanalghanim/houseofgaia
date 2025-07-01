@@ -5,6 +5,7 @@ from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 
 from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage
+from services.models import Service
 
 
 def landingPage(request):
@@ -12,9 +13,10 @@ def landingPage(request):
 
     landing, created = LandingPage.objects.get_or_create(name="landing")
     hit_count = HitCount.objects.get_for_object(landing)
+    allServices = Service.objects.all()
     HitCountMixin.hit_count(request, hit_count)
 
-    return render(request, "landingPage.html", {'blogs': posts, 'hit_count': hit_count.hits})
+    return render(request, "landingPage.html", {'blogs': posts, 'hit_count': hit_count.hits,"allServices":allServices})
 
 
 

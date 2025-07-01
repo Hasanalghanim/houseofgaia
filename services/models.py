@@ -9,7 +9,15 @@ class AllServicesPage(models.Model):
     name = models.CharField(max_length=100, default="AllServicesPage")
     test = models.CharField(max_length=100, default="AllServicesPage")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
-
+    imageLeft = models.ImageField(upload_to='images/', blank=True)
+    
+    image_hero_large_left = ImageSpecField(
+        source='imageLeft',
+        processors=[ResizeToFill(1200, 500)],  
+        format='PNG',
+        options={'quality': 90}
+    )
+    
 
 class Service(models.Model): 
     title = models.CharField(max_length=75)
@@ -21,7 +29,7 @@ class Service(models.Model):
     image_hero_large = ImageSpecField(
         source='image',
         processors=[ResizeToFill(500, 1200)],  
-        format='JPEG',
+        format='PNG',
         options={'quality': 90}
     )
     
@@ -29,14 +37,14 @@ class Service(models.Model):
     image_hero_small = ImageSpecField(
         source='image',
         processors=[ResizeToFill(200, 280)],  
-        format='JPEG',
+        format='PNG',
         options={'quality': 80}
     )
     
     image_thumbnail = ImageSpecField(
         source='image',
         processors=[ResizeToFill(150, 150)],  
-        format='JPEG',
+        format='PNG',
         options={'quality': 80}
     )
 

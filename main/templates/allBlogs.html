@@ -23,10 +23,16 @@
                     {% comment %}
 			<div class="allBlogsPostImage"></div>
                     {% endcomment %}
+                    <a class="" href="{% url 'blogDetail' slug=blog.slug %}">
                     <img class="allBlogsPostImage" src="{{ blog.image.url }}" />
+                    </a>
+                    <a class="" href="{% url 'blogDetail' slug=blog.slug %}">
                     <span class="landingPageBlogPostTitle two-line-text">{{ blog.title }}</span>
+                    </a>
                     <span class="landingPageBlogPostDate">{{ blog.created_at }}</span>
+                    
                     <div class="landingPageBlogPostContent">{{ blog.summary }}</div>
+                
                     <a class="waves-effect waves-light btn landingPageBlogPostBtn"
                        href="{% url 'blogDetail' slug=blog.slug %}">- READ MORE</a>
                 </div>

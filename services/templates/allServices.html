@@ -15,10 +15,36 @@
 {% endblock %}
 {% block content %}
     <div class="servicesTitle v-gap"></div>
-    <div class="container servicesRowSpacer">
-        <div class="titleRow">
-            <h1>OUR SERVICES</h1>
+    <div class="servicesRowSpacer">
+
+        <div class="servicesPageHero"> 
+             {% for heroPhoto in heroPhotos %}
+        <div class="servicesPageHeroLeft">
+            <img class="" src="{{ heroPhoto.image_hero_large_left.url }}"/> 
         </div>
+        {% endfor %}
+
+
+        </div>
+
+
+        <div class=' container servicesPageDetail'> 
+            <h1> Browse by Piercings</h1>
+            <p> Discover jewelry curated for each piercing location, whether it’s your lobe, helix, or nostril. 
+                Our selection features only high quality 14k solid gold and implant grade titanium.</p> 
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+<div class='container'>
         
         <div class='serviceScroll'>
            <a class="scrollBtn left" onclick="scrollServices('left', 3)">←</a>
@@ -46,13 +72,13 @@
 
 
         <div class="jewelryContainer">
-            <h2 id='jewelryContainerTitle'> </h2>
+            <h2 id='jewelryContainerTitle'></h2>
             <div id="allJewelryContainer" >
 
             </div>
         </div>
 
-
+    </div>
     </div>
 {% endblock %}
 

@@ -24,25 +24,61 @@
     <div class="backgroundPhotoCover"></div>
 </div>
 <h2 class="one-line v-gap">
-    <span>HELIX&nbsp;&nbsp;TRAGUS&nbsp;&nbsp;LOBE&nbsp;&nbsp;FLAT&nbsp;&nbsp;CONCH&nbsp;&nbsp;ROOK&nbsp;&nbsp;DAITH</span>
+    <span>HELIX&nbsp;&nbsp;TRAGUS&nbsp;&nbsp;LOBE&nbsp;&nbsp;FLAT&nbsp;&nbsp;CONCH&nbsp;&nbsp;NOSTRIL</span>
 </h2>
 <div class="container">
     <div class="row center-align">
         <div class="col s12">
             <div class="centered-window-text">
-                <p class="v-gap">
+                <p class="">
                     Experience luxury piercing at House of Gaia, St Albert and Edmonton’s premier studio for expert ear and nose piercings. We offer a personalized, high-end experience in a serene, modern setting, focused on safety, precision, and self-expression. From custom ear styling to flawless placements, our skilled piercer ensures each piece reflects your unique style.
                 </p>
             </div>
         </div>
     </div>
 </div>
-<div class="landingPageSecondPhoto"
-     id="landingPageSecondPhoto"
-     croppedUrl="{% static 'icons/houseOfGaia2.jpg' %}"
-     originalUrl="{% static 'icons/houseOfGaia2 cropped.jpg' %}">
-    <div class="backgroundPhotoCover"></div>
+
+
+
+
+
+
+
+<div class='landingPageServices'>
+    <h2 class=''>OUR PIERCINGS</h2>
+
+
+<div class='container v-gap'>
+        <div class='serviceScroll'>
+           <a class="scrollBtn left" onclick="scrollServices('left', 3)">←</a>
+            <div class="servicesContainer">
+                {% for service in allServices %}
+                <div class="serviceCard">
+                    <a class='serviceImageLink'>
+                        <div class='serviceImageCover'>{{ service.title }} </div>
+                        <img class="servicesPostImage" src="{{ service.image_hero_small.url }}"/> 
+                        
+                    </a>
+                    
+                    <div class="serviceDetail">
+                        <a onclick="updateJewelryForPiercing(this)" data-service-title="{{ service.title }}" data-service-id="{{ service.id }}" >
+                            <h2 class="serviceDetailTitle">{{ service.title }}</h2>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <a class="scrollBtn right" onclick="scrollServices('right', 3)">→</a>
+        </div>
+        <div class="carouselDots"></div> 
+
+    </div>
+
 </div>
+
+
+
 <div class='landingPageBlogPosts'>
     <h2 class='landingPageBlogHeader'>THE PIERCING EDIT</h2>
     <div class='blogPostContainer'>
@@ -65,6 +101,30 @@
     <a class="waves-effect waves-light btn landingPageViewAllBlogPostBtn"
        href="{% url 'allBlogs' %}">View All</a>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="landingPageSecondPhoto"
+     id="landingPageSecondPhoto"
+     croppedUrl="{% static 'icons/houseOfGaia2.jpg' %}"
+     originalUrl="{% static 'icons/houseOfGaia2 cropped.jpg' %}">
+    <div class="backgroundPhotoCover"></div>
+</div>
+
+
+
 <div class="newsletterSection">
     <div class="ml-embedded" data-form="UH9fj9"></div>
     <div style="display: flex; justify-content: center; align-items: center">

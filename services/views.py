@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import Service
+from .models import Service,AllServicesPage
 
 
 
@@ -9,8 +9,9 @@ from .models import Service
 
 def allServices(request):
     allServices = Service.objects.order_by('order') 
-
-    return render(request, "allServices.html", {'allServices':allServices})
+    heroPhotos = AllServicesPage.objects.all()
+    print(heroPhotos)
+    return render(request, "allServices.html", {'allServices':allServices,'heroPhotos':heroPhotos})
 
 
 

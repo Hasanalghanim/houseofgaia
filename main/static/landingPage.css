@@ -275,6 +275,15 @@ body {
 	margin-bottom: 75px;
 }
 
+.landingPageServices{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+.landingPageServices h2{
+font-size: 22px;
+}
+
 .blogPostContainer {
 	display: flex;
 	flex-direction: column;
@@ -282,14 +291,10 @@ body {
 }
 .landingPageBlogPost {
 	display: flex;
-
 	justify-content: space-between;
 	flex-direction: column;
 	width: 300px;
 	gap: 15px;
-}
-
-.landingPageBlogPost {
 }
 
 .landingPageBlogPostImage {

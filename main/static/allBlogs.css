@@ -5,7 +5,7 @@
 .allBlogsRowSpacer {
 	display: flex;
 	flex-direction: column;
-	gap: 100px;
+	gap: 50px;
 }
 .titleRow h1 {
 	font-style: italic;

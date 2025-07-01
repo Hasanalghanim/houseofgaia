@@ -9,6 +9,7 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
 
+
 class LandingPage(models.Model):
     name = models.CharField(max_length=100, default="landing")
     test = models.CharField(max_length=100, default="landing")
