@@ -10,7 +10,7 @@ from . import views
 sitemaps = {
     'static': custom_sitemap.StaticViewSitemap, 
     'blogs': custom_sitemap.BlogSitemap,
-    'piercings': custom_sitemap.BlogSitemap,
+    'piercings': custom_sitemap.ServicesSitemap,
 }
 
 urlpatterns = [
