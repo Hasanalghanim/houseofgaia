@@ -23,5 +23,5 @@ urlpatterns = [
 
 
     path("robots.txt", views.robots_txt, name="robots_txt"),
-    path("sitemap.xml", sitemap, {'sitemaps': sitemaps}, name="sitemap"),  # Corrected this line
+    path("sitemap.xml", sitemap, {'sitemaps': sitemaps}, name="sitemap"),  
 ]

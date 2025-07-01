@@ -3,6 +3,7 @@ from django.db import models
 from hitcount.models import HitCount
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from django.urls import reverse
 
 
 class AllServicesPage(models.Model):
@@ -47,7 +48,8 @@ class Service(models.Model):
         format='PNG',
         options={'quality': 80}
     )
-
+    def get_absolute_url(self):
+        return reverse('serviceDetail', kwargs={'title': self.title})
     def __str__(self):
         return self.title
     

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
 
 from .models import Service,AllServicesPage
@@ -13,11 +13,12 @@ def allServices(request):
     print(heroPhotos)
     return render(request, "allServices.html", {'allServices':allServices,'heroPhotos':heroPhotos})
 
+def serviceDetail(request,title):
+    blog = get_object_or_404(Service, title=title)
 
 
 
 def serviceData(request, service_id):
-    
     try:
         service = Service.objects.get(id=service_id)
         jewelry_items = service.jewelry_items.all() 
