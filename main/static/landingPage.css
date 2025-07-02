@@ -167,6 +167,13 @@ body {
 	font-size: 14px !important;
 }
 
+.booking-btn:hover {
+	
+	background-color: black !important;
+	color:white !important;
+	
+}
+
 .sideBarCloseBtn {
 	width: 100%;
 	display: flex;

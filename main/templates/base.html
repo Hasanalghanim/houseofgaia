@@ -54,6 +54,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'allBlogs.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'blogDetail.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'services.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'booking.css' %}" />
         <link rel="stylesheet"
               type="text/css"
               href="{% static 'richEditorStyles.css' %}" />
@@ -118,7 +119,7 @@
                             </a>
                             <ul class="right hide-on-med-and-down">
                                 <li>
-                                    {% comment %} <a class="btn transparent waves-effect waves-light booking-btn">BOOK ONLINE</a> {% endcomment %}
+                                    <a class="btn transparent waves-effect waves-light booking-btn" href="{% url 'enter_code' %}">BOOK ONLINE</a>
                                 </li>
                             </ul>
                         </div>
@@ -142,10 +143,11 @@
                             <li>
                                 <a href="{% url 'allBlogs' %}" class="sidebar-links">BLOGS</a>
                             </li>
+
                         </ul>
                         <ul>
                             <li>
-                                {% comment %} <a class="btn white waves-effect waves-light booking-btn">BOOK ONLINE</a> {% endcomment %}
+                                <a class="btn white waves-effect waves-light booking-btn" href="{% url 'enter_code' %}">BOOK ONLINE</a>
                             </li>
                         </ul>
                     </div>

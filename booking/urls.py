@@ -1,4 +1,3 @@
-
 from django.contrib.sitemaps.views import sitemap  # Import the correct sitemap view
 from django.urls import path,include
 from django.views.generic import RedirectView
@@ -8,7 +7,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.allServices, name='allServices'),
-    path('detail/<str:service_id>', views.serviceData, name='serviceData'),
-    path('type/<str:title>/',views.serviceDetail, name='serviceDetail'),
+    path('', views.enter_code, name='enter_code'),
+    path('appointments', views.booking_page, name='appointments'),
 ]
