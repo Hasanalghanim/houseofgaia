@@ -1,0 +1,6 @@
+.edmonton-title{ font-size: 32px;}
+
+.edmonton-list li{
+    list-style-type: circle !important;
+    margin-left: 5%;
+}

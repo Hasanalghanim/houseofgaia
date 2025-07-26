@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Edmonton | Piercing Studio for Edmonton Clients | House of
+    Gaia
+{% endblock %}
+{% block description %}
+Looking for a luxury piercing studio near Edmonton? House of Gaia in St. Albert offers expert ear and nose piercings, just minutes away.
+{% endblock %}
+{% block og_title %}Edmonton | Piercing Studio for Edmonton Clients | House of Gaia{% endblock %}
+{% block og_description %}
+Looking for a luxury piercing studio near Edmonton? House of Gaia in St. Albert offers expert ear and nose piercings, just minutes away.
+{% endblock %}
+{% block content %}
+<div class="container">
+
+
+
+    <div class="blogHeroImage">
+                {% if heroImage %}
+                    <img src="{{ heroImage.url }}"
+                        alt="{{ heroImage.title }}"
+                        class="hero-image large-hero"
+                        loading="lazy" />
+                {% endif %}
+    </div>
+    <div class='row'> 
+        <h1 class='edmonton-title'>Piercing Studio Near Edmonton - House of Gaia</h1>
+
+    </div>
+    <p>
+        At House of Gaia, we proudly serve clients from Edmonton who are looking for a luxury piercing experience. Our studio is located in nearby St. Albert — just a short 15–20 minute drive — and offers a curated selection of high-quality jewelry and precision piercing in a calm, professional environment.
+    </p>
+
+
+
+    <h2  class='edmonton-title'>Why Edmonton Clients Choose Us</h2>
+    <ul class='edmonton-list'>
+        <li> Expert ear & nose</li>
+        <li> High-quality, hypoallergenic jewelry</li>
+        <li> Calm, luxurious, and hygienic studio space</li>
+        <li> Just a 15-minute drive from central Edmonton</li>
+    </ul>
+
+
+    <h2  class=' edmonton-title'>How to Get to Our Studio from Edmonton</h2>
+        <p>
+        We’re located at 150 Carleton Dr, St. Albert — with free parking and easy access via Anthony Henday Drive. Most clients from downtown Edmonton or west Edmonton reach us in about 15–20 minutes.
+    </p>
+</div>
+{% endblock %}

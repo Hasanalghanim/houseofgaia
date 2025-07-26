@@ -26,6 +26,21 @@ class AllBlogsPage(models.Model):
     test = models.CharField(max_length=100, default="AllBlogsPage")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
 
+class EdmontonPage(models.Model):
+    name = models.CharField(max_length=100, default="EdmontonPage")
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk')
+    image = models.ImageField(upload_to='images/')
+    image_hero_large = ImageSpecField(
+        source='image',
+        processors=[ResizeToFill(1200, 500)],  
+        format='JPEG',
+        options={'quality': 90}
+    )
+    def __str__(self):
+        return self.name
+    
+
+
 
 
 

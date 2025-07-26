@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 
-from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage
+from .models import AboutPage, AllBlogsPage, BlogPost, LandingPage,EdmontonPage
 from services.models import Service
 
 
@@ -25,10 +25,17 @@ def about(request):
     aboutHits ,created = AboutPage.objects.get_or_create(name="aboutPage")
     hit_count = HitCount.objects.get_for_object(aboutHits)
     HitCountMixin.hit_count(request, hit_count)
-
     return render(request, "about.html", {'hit_count':hit_count.hits})
 
 
+
+def edmonton(request):
+    edmontonHits ,created = EdmontonPage.objects.get_or_create(name="EdmontonPage")
+    hit_count = HitCount.objects.get_for_object(edmontonHits)
+    HitCountMixin.hit_count(request, hit_count)
+    print(edmontonHits.image_hero_large)
+
+    return render(request, "edmonton.html", {'hit_count':hit_count.hits,'heroImage':edmontonHits.image_hero_large})
 
 
 
@@ -36,13 +43,9 @@ def about(request):
 
 def allBlogs(request):
     posts = BlogPost.objects.order_by('-id') 
-
-
     blogHits ,created  = AllBlogsPage.objects.get_or_create(name="AllBlogsPage")
-    
     hit_count = HitCount.objects.get_for_object(blogHits)
     HitCountMixin.hit_count(request, hit_count)
-    
     return render(request, "allBlogs.html", {'blogs': posts,'hit_count':hit_count.hits})
 
 
