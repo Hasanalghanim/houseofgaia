@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Appointments | House of Gaia{% endblock %}
+{% block content %}
+    <div class="container access_code_container">
+        <h1 class='v-gap'>Enter Gaia Muse </br>Early Access Code</h1>
+        <p class='v-gap'> You will be redirected to the booking page once a correct code is entered.</p>
+            <form method="post" class='v-gap'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="waves-effect waves-light btn" type="submit">Submit</button>
+            </form>
+    </div>
+{% endblock %}

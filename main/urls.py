@@ -13,13 +13,17 @@ sitemaps = {
     'piercings': custom_sitemap.ServicesSitemap,
 }
 
+
 urlpatterns = [
     path('', views.landingPage, name='landingPage'),
     path('redirect/', RedirectView.as_view(url='/', permanent=False), name='redirect_to_home'),
     path('about', views.about, name='about'),
-    path('piercings', include('services.urls') ),
+    path('piercings/', include('services.urls') ),
     path('the-piercing-edit/', views.allBlogs, name='allBlogs'),
     path('the-piercing-edit/<slug:slug>/',views.blogDetail, name='blogDetail'),
+
+
+    path('booking/',include('booking.urls')),
 
 
     path("robots.txt", views.robots_txt, name="robots_txt"),
