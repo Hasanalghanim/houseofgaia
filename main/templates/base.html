@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% block meta %}
             <title>
-                {% block title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}
+                {% block title %}Luxury Piercings in St. Albert & Edmonton | House of Gaia{% endblock %}
             </title>
             <meta name="description"
                   content="{% block description %}Welcome to House of Gaia — Your go-to destination for luxury piercings.{% endblock %}" />
@@ -15,7 +15,7 @@
             <meta name="author" content="House of Gaia" />
             <!-- Open for social sharing info-->
             <meta property="og:title"
-                  content="{% block og_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
+                  content="{% block og_title %}Luxury Piercings in St. Albert & Edmonton | House of Gaia{% endblock %}" />
             <meta property="og:description"
                   content="{% block og_description %}Luxury piercings and jewelry studio.{% endblock %}" />
             <meta property="og:image"
@@ -25,7 +25,7 @@
             <!-- Twitter -->
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title"
-                  content="{% block twitter_title %}Luxury Piercings and Curated Jewelry | House of Gaia{% endblock %}" />
+                  content="{% block twitter_title %}Luxury Piercings in St. Albert & Edmonton | House of Gaia{% endblock %}" />
             <meta name="twitter:description"
                   content="{% block twitter_description %}Luxury piercings and jewelry studio.{% endblock %}" />
             <meta name="twitter:image"
@@ -57,26 +57,28 @@
         <link rel="stylesheet"
               type="text/css"
               href="{% static 'richEditorStyles.css' %}" />
-        <script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
-				"name": "House of Gaia",
-				"image": "https://houseofgaia.ca/static/icons/main.svg",
-				"address": {
-					"@type": "PostalAddress",
-					"streetAddress": "150 Carleton Dr",
-					"addressLocality": "St. Albert",
-					"addressRegion": "AB",
-					"postalCode": "T8N 6W2",
-					"addressCountry": "CA"
-				},
-				"url": "https://houseofgaia.ca",
-				"telephone": "+1-780-686-0125",
-				"priceRange": "$$",
-				"openingHours": "Tu-Sa 11:00-18:00"
-			}
-        </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "House of Gaia",
+  "image": "https://houseofgaia.ca/static/icons/main.svg",
+  "logo": "https://houseofgaia.ca/static/icons/main.svg",
+  "description": "House of Gaia is a luxury piercing and curated jewelry studio based in St. Albert, Alberta.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "150 Carleton Dr",
+    "addressLocality": "St. Albert",
+    "addressRegion": "AB",
+    "postalCode": "T8N 6W2",
+    "addressCountry": "CA"
+  },
+  "url": "https://houseofgaia.ca",
+  "telephone": "+1-780-686-0125",
+  "priceRange": "$$",
+  "openingHours": "Tu-Sa 11:00-18:00"
+}
+</script>
     </head>
     <body>
         <div id="splashScreen">
